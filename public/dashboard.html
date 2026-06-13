@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ELITE MIGRACIÓN | Advisor Dashboard</title>
@@ -10,28 +10,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         .glass-card {
-            background: rgba(26, 26, 26, 0.6);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(45, 55, 72, 0.3);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
         .glass-overlay {
-            background: rgba(255, 222, 165, 0.05);
-            border: 1px solid rgba(233, 193, 118, 0.1);
+            background: rgba(212, 175, 55, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.15);
         }
         .progress-line {
-            height: 2px;
-            background: rgba(233, 193, 118, 0.1);
+            height: 3px;
+            background: rgba(212, 175, 55, 0.1);
         }
         .progress-fill {
-            height: 2px;
-            background: #e9c176;
-            box-shadow: 0 0 15px rgba(233, 193, 118, 0.4);
+            height: 3px;
+            background: #D4AF37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
         body {
-            background-color: #0D0D0D;
-            color: #e5e2e1;
+            background-color: #F7F9FB;
+            color: #1A202C;
             overflow-x: hidden;
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        .bg-gold {
+            background-color: #D4AF37;
         }
     </style>
 <script id="tailwind-config">
@@ -40,24 +49,24 @@
           theme: {
             extend: {
               "colors": {
-                      "inverse-surface": "#e5e2e1",
-                      "inverse-primary": "#5f5e5e",
-                      "surface-container-lowest": "#0e0e0e",
-                      "secondary-fixed-dim": "#e9c176",
-                      "surface-container-highest": "#353535",
-                      "outline-variant": "#444748",
-                      "background": "#131313",
-                      "on-tertiary-container": "#707b8f",
-                      "secondary-fixed": "#ffdea5",
-                      "primary-container": "#0d0d0d",
-                      "surface": "#131313",
-                      "on-secondary-fixed": "#261900",
-                      "surface-variant": "#353535",
-                      "on-secondary-container": "#dab36a",
-                      "error-container": "#93000a",
-                      "primary": "#c9c6c5",
-                      "on-primary": "#313030",
-                      "secondary-container": "#604403",
+                      "inverse-surface": "#1A202C",
+                      "inverse-primary": "#C5A059",
+                      "surface-container-lowest": "#FFFFFF",
+                      "secondary-fixed-dim": "#C5A059",
+                      "surface-container-highest": "#E2E8F0",
+                      "outline-variant": "#CBD5E1",
+                      "background": "#F7F9FB",
+                      "on-tertiary-container": "#4A5568",
+                      "secondary-fixed": "#FEEBC8",
+                      "primary-container": "#FFFFFF",
+                      "surface": "#FFFFFF",
+                      "on-secondary-fixed": "#2C1A00",
+                      "surface-variant": "#EDF2F7",
+                      "on-secondary-container": "#B38F3D",
+                      "error-container": "#FED7D7",
+                      "primary": "#1A202C",
+                      "on-primary": "#FFFFFF",
+                      "secondary-container": "#FEF3C7",
                       "on-primary-fixed": "#1c1b1b",
                       "on-secondary": "#412d00",
                       "tertiary-fixed": "#d8e3fa",
@@ -67,23 +76,23 @@
                       "tertiary": "#bcc7dd",
                       "outline": "#8e9192",
                       "tertiary-fixed-dim": "#bcc7dd",
-                      "on-surface": "#e5e2e1",
-                      "surface-container-high": "#2a2a2a",
-                      "on-background": "#e5e2e1",
-                      "primary-fixed-dim": "#c9c6c5",
-                      "surface-container-low": "#1c1b1b",
-                      "surface-container": "#20201f",
-                      "on-error": "#690005",
-                      "on-primary-container": "#7c7a7a",
-                      "on-error-container": "#ffdad6",
-                      "tertiary-container": "#030d1d",
-                      "surface-tint": "#c9c6c5",
+                      "on-surface": "#1A202C",
+                      "surface-container-high": "#EDF2F7",
+                      "on-background": "#1A202C",
+                      "primary-fixed-dim": "#A0AEC0",
+                      "surface-container-low": "#F7F9FB",
+                      "surface-container": "#FFFFFF",
+                      "on-error": "#FFFFFF",
+                      "on-primary-container": "#2D3748",
+                      "on-error-container": "#742A2A",
+                      "tertiary-container": "#E2E8F0",
+                      "surface-tint": "#C5A059",
                       "on-secondary-fixed-variant": "#5d4201",
-                      "on-surface-variant": "#c4c7c7",
-                      "inverse-on-surface": "#313030",
-                      "primary-fixed": "#e5e2e1",
-                      "surface-dim": "#131313",
-                      "secondary": "#e9c176",
+                      "on-surface-variant": "#4A5568",
+                      "inverse-on-surface": "#F7F9FB",
+                      "primary-fixed": "#EDF2F7",
+                      "surface-dim": "#F7F9FB",
+                      "secondary": "#D4AF37",
                       "on-tertiary-fixed-variant": "#3c475a",
                       "on-tertiary-fixed": "#111c2c",
                       "on-tertiary": "#263142"
@@ -339,40 +348,83 @@
             <div id="tab-plan12" class="tab-content hidden space-y-6">
                 <div class="flex flex-col md:flex-row gap-6">
                     <div class="flex-1 space-y-4">
-                        <h4 class="font-display-md text-display-md text-secondary">⚡ Plan 12 Meses: De Cero a Nómada Digital con IA</h4>
-                        <p class="text-on-surface-variant font-body-lg">La hoja de ruta para construir independencia económica desde Cuba y consolidarse en Portugal.</p>
+                        <h4 class="font-display-md text-display-md text-secondary">⚡ Mi Hoja de Ruta Dinámica: Cuba a Europa</h4>
+                        <p class="text-on-surface-variant font-body-lg">Completa cada paso del plan y realiza el seguimiento de tu progreso real. Diseñado estratégicamente para evitar gastos innecesarios.</p>
                         
+                        <!-- Progreso Local -->
+                        <div class="glass-overlay p-4 rounded-lg border border-outline-variant/20 mb-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-on-secondary-container uppercase tracking-wider">Tu Progreso de Emigración</span>
+                                <span id="timeline-progress-text" class="text-sm font-bold text-secondary">0%</span>
+                            </div>
+                            <div class="progress-line w-full rounded-full overflow-hidden">
+                                <div id="timeline-progress-bar" class="progress-fill w-[0%] rounded-full h-1"></div>
+                            </div>
+                        </div>
+
                         <!-- Timeline list -->
                         <div class="relative pl-6 border-l border-secondary/30 space-y-6">
-                            <!-- Milestone 1 -->
-                            <div class="relative">
-                                <span class="absolute -left-[30px] top-1 w-4 h-4 rounded-full bg-secondary border-4 border-background"></span>
-                                <h5 class="font-label-md text-label-md text-primary">Mes 1-2: Fundamentos de IA y Prompting</h5>
-                                <p class="text-xs text-on-surface-variant">Capacitación gratuita en ChatGPT, Gemini y Canva IA. Creación de flujos de trabajo eficientes.</p>
+                            <!-- Paso 1 -->
+                            <div class="relative flex items-start">
+                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                    <input type="checkbox" id="step-1" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                </span>
+                                <div class="ml-2">
+                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 1: 💰 Viabilidad de Fondos y Solvencia</h5>
+                                    <p class="text-xs text-on-surface-variant mt-0.5">Asegura los ahorros mínimos líquidos (<strong>2.760€</strong> para Portugal o <strong>7.200€</strong> para España) en cuentas bancarias cubanas (Banco Metropolitano, BANDEC, BPA) o redacta el Acta Notarial de Sostenimiento Familiar con tus patrocinadores directos.</p>
+                                </div>
                             </div>
-                            <!-- Milestone 2 -->
-                            <div class="relative">
-                                <span class="absolute -left-[30px] top-1 w-4 h-4 rounded-full bg-secondary border-4 border-background"></span>
-                                <h5 class="font-label-md text-label-md text-primary">Mes 3-4: Primer Habilidad Monetizable (Edición / Redes)</h5>
-                                <p class="text-xs text-on-surface-variant">Generación de tus primeros $50 a $300 mensuales trabajando para clientes en Latinoamérica. Edición rápida de video y redacción de contenido optimizado con IA.</p>
+                            <!-- Paso 2 -->
+                            <div class="relative flex items-start">
+                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                    <input type="checkbox" id="step-2" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                </span>
+                                <div class="ml-2">
+                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 2: 🎓 Pre-registro IEFP o Admisión Académica</h5>
+                                    <p class="text-xs text-on-surface-variant mt-0.5">Regístrate en la plataforma del IEFP (Portugal) para búsqueda de empleo o asegura la carta de admisión oficial en un centro académico o curso de FP homologado (España).</p>
+                                </div>
                             </div>
-                            <!-- Milestone 3 -->
-                            <div class="relative">
-                                <span class="absolute -left-[30px] top-1 w-4 h-4 rounded-full bg-secondary border-4 border-background"></span>
-                                <h5 class="font-label-md text-label-md text-primary">Mes 5-6: Freelance Internacional y Cobros</h5>
-                                <p class="text-xs text-on-surface-variant">Escalado a plataformas globales (Fiverr, Upwork). Cobro seguro de USD/EUR usando pasarelas y monederos digitales como Payoneer (generando de $300 a $800/mes).</p>
+                            <!-- Paso 3 -->
+                            <div class="relative flex items-start border-2 border-secondary/20 p-3 rounded-lg bg-secondary/5">
+                                <span class="absolute -left-[32px] top-4.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                    <input type="checkbox" id="step-3" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                </span>
+                                <div class="ml-2">
+                                    <h5 class="font-label-md text-label-md text-secondary font-bold flex items-center">
+                                        <span class="material-symbols-outlined text-sm mr-1">warning</span> Paso 3: 🛂 Solicitud de Pasaporte Cubano
+                                    </h5>
+                                    <p class="text-xs text-on-surface-variant mt-0.5"><strong>[PASO CLAVE POSTERIOR]</strong> Solicita tu pasaporte en Cuba <u>únicamente después</u> de haber verificado los fondos y asegurado la admisión/pre-registro. Esto evita pérdidas económicas y pagos innecesarios en caso de no cumplir con los requisitos previos.</p>
+                                </div>
                             </div>
-                            <!-- Milestone 4 -->
-                            <div class="relative">
-                                <span class="absolute -left-[30px] top-1 w-4 h-4 rounded-full bg-secondary border-4 border-background"></span>
-                                <h5 class="font-label-md text-label-md text-primary">Mes 7-12: Especialización IA y Automatización</h5>
-                                <p class="text-xs text-on-surface-variant">Construcción de agentes de IA autónomos, integraciones con Make/Zapier y SEO avanzado. Ingresos estables de $800 a $2,000 mensuales.</p>
+                            <!-- Paso 4 -->
+                            <div class="relative flex items-start">
+                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                    <input type="checkbox" id="step-4" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                </span>
+                                <div class="ml-2">
+                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 4: 🏛️ Legalizaciones en el MINJUS</h5>
+                                    <p class="text-xs text-on-surface-variant mt-0.5">Legaliza tus títulos y documentos de registro civil a través de la vía digital del Ministerio de Justicia (MINJUS), usando el portal con firma electrónica y código QR.</p>
+                                </div>
                             </div>
-                            <!-- Milestone 5 -->
-                            <div class="relative">
-                                <span class="absolute -left-[30px] top-1 w-4 h-4 rounded-full bg-secondary border-4 border-background"></span>
-                                <h5 class="font-label-md text-label-md text-secondary">2027+: Libertad Digital y Residencia en Portugal</h5>
-                                <p class="text-xs text-on-surface-variant">Aplicación al visado de búsqueda de trabajo con fondos estables creados por tu trabajo online, o visado de nómada digital con ingresos garantizados. Ingresos > $1.500€/mes.</p>
+                            <!-- Paso 5 -->
+                            <div class="relative flex items-start">
+                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                    <input type="checkbox" id="step-5" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                </span>
+                                <div class="ml-2">
+                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 5: 📅 Cita Consular en La Habana</h5>
+                                    <p class="text-xs text-on-surface-variant mt-0.5">Envía el correo al Consulado con el formato estructurado y el asunto obligatorio (`CITA VISADO RES` o `CITA LEGA`) para obtener tu turno oficial.</p>
+                                </div>
+                            </div>
+                            <!-- Paso 6 -->
+                            <div class="relative flex items-start">
+                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                    <input type="checkbox" id="step-6" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                </span>
+                                <div class="ml-2">
+                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 6: ✈️ Reserva Onward Ticket y Seguro</h5>
+                                    <p class="text-xs text-on-surface-variant mt-0.5">Contrata el seguro de viaje obligatorio de 30.000€ y emite un pasaje Onward Ticket para la aerolínea sin comprar el billete final.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -457,6 +509,44 @@
                 activeBtn.classList.add('bg-secondary-container', 'text-on-secondary-container');
             }
         }
+
+        // Función interactiva para la barra de progreso de la ruta de emigración
+        function updateTimelineProgress() {
+            const checkboxes = document.querySelectorAll('.step-checkbox');
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    checkedCount++;
+                }
+                // Guardar en local storage
+                localStorage.setItem(cb.id, cb.checked);
+            });
+            
+            const percentage = Math.round((checkedCount / total) * 100);
+            
+            // Actualizar elementos del DOM
+            const progressBar = document.getElementById('timeline-progress-bar');
+            const progressText = document.getElementById('timeline-progress-text');
+            
+            if (progressBar && progressText) {
+                progressBar.style.width = percentage + '%';
+                progressText.innerText = percentage + '%';
+            }
+        }
+
+        // Restaurar estado de la ruta al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('.step-checkbox');
+            checkboxes.forEach(cb => {
+                const storedState = localStorage.getItem(cb.id);
+                if (storedState !== null) {
+                    cb.checked = (storedState === 'true');
+                }
+            });
+            updateTimelineProgress();
+        });
 
         // Simple intersection observer for subtle fade-in of cards
         const observerOptions = {
