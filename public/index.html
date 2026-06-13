@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELITE MIGRACIÓN | Premium Advisory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#5f5e5e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed-dim": "#e9c176",
+                    "surface-container-highest": "#353535",
+                    "outline-variant": "#444748",
+                    "background": "#131313",
+                    "on-tertiary-container": "#707b8f",
+                    "secondary-fixed": "#ffdea5",
+                    "primary-container": "#0d0d0d",
+                    "surface": "#131313",
+                    "on-secondary-fixed": "#261900",
+                    "surface-variant": "#353535",
+                    "on-secondary-container": "#dab36a",
+                    "error-container": "#93000a",
+                    "primary": "#c9c6c5",
+                    "on-primary": "#313030",
+                    "secondary-container": "#604403",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-secondary": "#412d00",
+                    "tertiary-fixed": "#d8e3fa",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#393939",
+                    "on-primary-fixed-variant": "#474646",
+                    "tertiary": "#bcc7dd",
+                    "outline": "#8e9192",
+                    "tertiary-fixed-dim": "#bcc7dd",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container": "#20201f",
+                    "on-error": "#690005",
+                    "on-primary-container": "#7c7a7a",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#030d1d",
+                    "surface-tint": "#c9c6c5",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "on-surface-variant": "#c4c7c7",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "secondary": "#e9c176",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "on-tertiary-fixed": "#111c2c",
+                    "on-tertiary": "#263142"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Outfit"],
+                    "body-md": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "label-md": ["Outfit"],
+                    "caption": ["Outfit"],
+                    "display-lg": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "headline-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0D0D0D;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(45, 55, 72, 0.3);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #e9c176 0%, #dab36a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ambient-glow {
+            box-shadow: 0 0 80px 10px rgba(233, 193, 118, 0.05);
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(233, 193, 118, 0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg text-[24px] md:text-display-lg tracking-tight text-secondary">ELITE MIGRACIÓN</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-lg text-body-lg text-secondary border-b-2 border-secondary pb-1 duration-300 ease-in-out" href="dashboard.html">Dashboard</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300 ease-in-out" href="#">Advisors</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300 ease-in-out" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-6">
+<a href="dashboard.html" class="hidden md:block font-label-md text-label-md px-6 py-3 bg-secondary text-on-secondary rounded-lg hover:scale-[1.02] transition-transform duration-200 text-center">
+                    Portal Access
+                </a>
+<div class="w-10 h-10 rounded-full border border-outline overflow-hidden">
+<img alt="Advisor Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a senior executive advisor in a sharp charcoal suit. The background is a blurred, high-end corporate lounge with warm ambient lighting. The aesthetic is clean, professional, and exudes confidence and success. The lighting is soft yet directional, highlighting the advisor's welcoming yet authoritative expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5PjVOiv1iu9QNhwUH-5PKyRL2AB1SPZ7vN84myVZs3PLpTmyD-s6bNUehqCgsFHvApGF61DYWWHIYH3uX0tOhqSY9UeEdtc0QcRrug0iThGG2n2HsBPAfsLs-13JmWa9xJpyap5LJ0SQIKewD3_tnOHGR9T7XtykMRY0GuvvJtSlsznG-uyJK0-QAcN5kCbImiZGXWGwyauSVHd5EbvUeLDgUDMDXDKmumyA69gDm-IDnBWlq5ygtctGGmJvkRyXYHbXsmX-6LRg"/>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[100vh] flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Travel" class="w-full h-full object-cover opacity-60" data-alt="A wide cinematic shot of a modern private jet interior with high-end leather seating and soft golden ambient lighting at dusk. Through the large windows, a breathtaking sunset over a global city skyline is visible. The scene is quiet, luxurious, and sophisticated, embodying the feeling of global professional success and elite mobility. Deep obsidian shadows contrast with warm champagne highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYBqXHeJeSMPO-BKWkrVLXWTVYKM6BDB8CAgMwgD7Iuzn9PIdSpzGdEvs0AMk8OOpfSdWhKNZRI_8jBpUd44Jof5VPnUMU7MW_cwcvkNj8bmnXYabNXFb5ewF5VAVU2rdgVKosWkDDJccdQFico2UMsON-25m-6Ne2zTcX9ru2mh_4WM_80fRRBGGrIKAEr_gNxwS4cpesDgMrwGtmZEHHczWzL9XboM3BFEEulTSMxPwLHTFHr5js_5t4PW9TQ88xBGhe1QK5mYM"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile">
+<div class="inline-block px-4 py-1 mb-6 border border-secondary/30 rounded-full bg-secondary/5">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em]">Excellence in Mobility</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[72px] mb-8 leading-[1.05] tracking-tight text-on-surface">
+                    Your Gateway to <br/> <span class="text-gradient-gold">Global Prosperity</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    Bespoke migration advisory and professional mentoring for the world's most ambitious individuals. We don't just facilitate moves; we architect legacies.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+<a href="booking.html" class="w-full md:w-auto px-10 py-5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-secondary/10 text-center">
+                        Inquire Privately
+                    </a>
+<a href="dashboard.html" class="w-full md:w-auto px-10 py-5 bg-secondary/10 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary hover:text-on-secondary transition-all duration-300 shadow-lg shadow-secondary/10 text-center">
+                        Access Study
+                    </a>
+</div>
+</div>
+<!-- Floating Stat Card -->
+<div class="absolute bottom-12 right-margin-desktop hidden xl:block">
+<div class="glass-card p-6 rounded-xl ambient-glow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-secondary">98%</div>
+<div class="font-caption text-caption text-on-surface-variant uppercase tracking-widest">Success Rate</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg md:text-[40px] mb-4 text-on-surface">Precision Advisory for <br/> <span class="text-secondary">Exceptional Journeys</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Our service suite is meticulously crafted to handle every nuance of your international transition.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary underline cursor-pointer hover:opacity-80 transition-opacity">Explore All Solutions</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Migration -->
+<div class="md:col-span-8 group relative h-[400px] rounded-xl overflow-hidden glass-card transition-all duration-500 hover:border-secondary/40">
+<img alt="Migration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40" data-alt="A sleek architectural shot of a modern glass skyscraper reflecting a clear blue sky in a global financial district like London or New York. The composition is minimalist and powerful, emphasizing stability and professional heights. The image uses a cool, high-contrast palette of deep blues and metallic silvers to fit a dark luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyUMTgP-gscVpaFj8wduyAyVrXQHf7oegwYnrKvWk-OlPh_642m_o5tcTSslPikwN_UhdKIgSWESUZsKguqbSJLVQzhnRBUswWkOGIN0zM5vZ0H27w4-YPEBqq6Gxw6Zbs36RMAMqsCCBIxa8EwcLRmUO6z5UMXVQDLiJs5Dz_rTuK06YCAb5Y_Y5tmlq6Pvb5I729MqBuYjfUGYiYh5PuI94Y1RjlbLiQgvMXUUGn5bHLmmR-k-Cen203PfnvGTMCAcE27yo1CTA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<span class="material-symbols-outlined text-secondary mb-4 text-[32px]">flight_takeoff</span>
+<h3 class="font-headline-md text-headline-md mb-2">Elite Migration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Seamless visa facilitation and strategic residency planning for entrepreneurs and investors.</p>
+</div>
+</div>
+<!-- Studies -->
+<div class="md:col-span-4 group relative h-[400px] rounded-xl overflow-hidden glass-card transition-all duration-500 hover:border-secondary/40"><img alt="Studies" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30" data-alt="The interior of a classic, prestigious university library with dark wood paneling, glowing green lamps, and rows of leather-bound books. The lighting is intimate and warm, focused on a mahogany study desk. The mood is academic excellence and historical prestige, rendered with a sophisticated dark-mode atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPH_ps36Qmg187Cm_cLlaY62s7yHINR2cm_ElsJ95LzwldQeiYy2tXL75tyatHgCcwg8HFSJK5ruUlgStnwNqQx2IcpCJb5Ya2i4Lk08bdBK65Rdv3YUc16EUii3ByaUXX4rDxbbt_8XC2d7AxHf1Mt1moJkFRtvGcxTKQLEPYR9D9UYgfoZEn_fmmp7KvCEwSnigImn6aEqnMnncsFw5cmA7ZPYRhdbB6VugL6O2GrzBz3O-P6gAv50Iq0y7Ij4LqImwjOdTjWWg"/>
+<div class="absolute top-6 right-6 z-10">
+<span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-caption rounded-full uppercase tracking-widest">New</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="material-symbols-outlined text-secondary mb-4 text-[32px]">school</span>
+<h3 class="font-headline-md text-headline-md mb-2">Global Education</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Integral Migration Study for 18-year-old Cuban graduates. Access to the world's most prestigious academic institutions.</p>
+</div></div>
+<!-- Mentoring -->
+<div class="md:col-span-4 group relative h-[400px] rounded-xl overflow-hidden glass-card transition-all duration-500 hover:border-secondary/40">
+<img alt="Mentoring" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30" data-alt="A focused close-up of two professionals engaged in a serious discussion in a high-end boardroom at night. Only their silhouettes and the light from a laptop are clearly visible, creating a moody, cinematic atmosphere. Reflections of city lights shimmer on the polished table. The scene denotes elite mentorship and strategic planning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz46eg-oOTLF_trO_p3fDwaSr8E3L-CoXav0I_qMfdj2Hpsxj7egBvoIm9AmTk4UeWeb4thTBDz8-K0ZtpLfd891Lb_jGh_ncukYgAJW515X2Ady2arUpaaz_D1kXQm3O9STgI6bAysUohdmnA7AG2v8eVjspaxIMQ4-SJPtlPHkAt1GD5Q2mwUW1X-yvGm__Um_PjuTU2holdcEnVkI4s72NuG_d0pgQnjbW8SSdHC6Ogvu7GS1t82UnJ5IoVldvVR_lJmurUFtM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="material-symbols-outlined text-secondary mb-4 text-[32px]">handshake</span>
+<h3 class="font-headline-md text-headline-md mb-2">Executive Mentoring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">One-on-one professional guidance from industry leaders to accelerate your career integration.</p>
+</div>
+</div>
+<!-- Advisory -->
+<div class="md:col-span-8 group relative h-[400px] rounded-xl overflow-hidden glass-card transition-all duration-500 hover:border-secondary/40">
+<div class="absolute inset-0 shimmer opacity-20"></div>
+<div class="absolute inset-0 flex items-center justify-center p-12 text-center">
+<div class="max-w-xl">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mx-auto mb-6">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Strategic Advisory Portal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Exclusive 24/7 access to your dedicated migration strategist and document vault.</p>
+<button class="px-8 py-3 bg-transparent border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary hover:text-on-secondary transition-all duration-300">
+                                Enter Portal
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features/CTA Section -->
+<section class="bg-surface-container-low py-section-gap relative overflow-hidden">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-secondary/5 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/5 blur-[120px] rounded-full"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-12">
+<h2 class="font-headline-lg text-headline-lg md:text-[48px] text-on-surface leading-tight">The Standards of <br/> <span class="text-secondary">Elite Governance</span></h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant/30 rounded-lg">
+<span class="material-symbols-outlined text-secondary">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-1">Unrivaled Discretion</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Your privacy is our ultimate priority. We operate with the highest level of confidentiality and secure encryption protocols.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant/30 rounded-lg">
+<span class="material-symbols-outlined text-secondary">hub</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-1">Global Network</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Instant access to a vetted ecosystem of lawyers, financial advisors, and cultural integrators across 40+ countries.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant/30 rounded-lg">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-1">Legacy Planning</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We look beyond the visa. Our team helps you establish the foundations for long-term wealth and family security.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative"><img alt="Studies" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30" data-alt="The interior of a classic, prestigious university library with dark wood paneling, glowing green lamps, and rows of leather-bound books. The lighting is intimate and warm, focused on a mahogany study desk. The mood is academic excellence and historical prestige, rendered with a sophisticated dark-mode atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPH_ps36Qmg187Cm_cLlaY62s7yHINR2cm_ElsJ95LzwldQeiYy2tXL75tyatHgCcwg8HFSJK5ruUlgStnwNqQx2IcpCJb5Ya2i4Lk08bdBK65Rdv3YUc16EUii3ByaUXX4rDxbbt_8XC2d7AxHf1Mt1moJkFRtvGcxTKQLEPYR9D9UYgfoZEn_fmmp7KvCEwSnigImn6aEqnMnncsFw5cmA7ZPYRhdbB6VugL6O2GrzBz3O-P6gAv50Iq0y7Ij4LqImwjOdTjWWg"/>
+<div class="absolute top-6 right-6 z-10">
+<span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-caption rounded-full uppercase tracking-widest">New</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="material-symbols-outlined text-secondary mb-4 text-[32px]">school</span>
+<h3 class="font-headline-md text-headline-md mb-2">Global Education</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Integral Migration Study for 18-year-old Cuban graduates. Access to the world's most prestigious academic institutions.</p>
+</div></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant/30 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="text-center md:text-left">
+<div class="font-headline-md text-headline-md text-secondary mb-2">ELITE MIGRACIÓN</div>
+<div class="font-caption text-caption text-on-surface-variant">© 2024 ELITE MIGRACIÓN. All Rights Reserved.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-caption text-caption">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-on-surface-variant hover:border-secondary hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-on-surface-variant hover:border-secondary hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">language</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll and intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Sticky Nav logic
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.add('h-20');
+                header.classList.remove('h-16');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELITE MIGRACIÓN | Advisor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(45, 55, 72, 0.3);
+        }
+        .glass-overlay {
+            background: rgba(255, 222, 165, 0.05);
+            border: 1px solid rgba(233, 193, 118, 0.1);
+        }
+        .progress-line {
+            height: 2px;
+            background: rgba(233, 193, 118, 0.1);
+        }
+        .progress-fill {
+            height: 2px;
+            background: #e9c176;
+            box-shadow: 0 0 15px rgba(233, 193, 118, 0.4);
+        }
+        body {
+            background-color: #0D0D0D;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#e5e2e1",
+                      "inverse-primary": "#5f5e5e",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary-fixed-dim": "#e9c176",
+                      "surface-container-highest": "#353535",
+                      "outline-variant": "#444748",
+                      "background": "#131313",
+                      "on-tertiary-container": "#707b8f",
+                      "secondary-fixed": "#ffdea5",
+                      "primary-container": "#0d0d0d",
+                      "surface": "#131313",
+                      "on-secondary-fixed": "#261900",
+                      "surface-variant": "#353535",
+                      "on-secondary-container": "#dab36a",
+                      "error-container": "#93000a",
+                      "primary": "#c9c6c5",
+                      "on-primary": "#313030",
+                      "secondary-container": "#604403",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-secondary": "#412d00",
+                      "tertiary-fixed": "#d8e3fa",
+                      "error": "#ffb4ab",
+                      "surface-bright": "#393939",
+                      "on-primary-fixed-variant": "#474646",
+                      "tertiary": "#bcc7dd",
+                      "outline": "#8e9192",
+                      "tertiary-fixed-dim": "#bcc7dd",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-high": "#2a2a2a",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container": "#20201f",
+                      "on-error": "#690005",
+                      "on-primary-container": "#7c7a7a",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#030d1d",
+                      "surface-tint": "#c9c6c5",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "on-surface-variant": "#c4c7c7",
+                      "inverse-on-surface": "#313030",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-dim": "#131313",
+                      "secondary": "#e9c176",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "on-tertiary-fixed": "#111c2c",
+                      "on-tertiary": "#263142"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "section-gap": "120px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Outfit"],
+                      "body-md": ["Outfit"],
+                      "headline-md": ["Outfit"],
+                      "label-md": ["Outfit"],
+                      "caption": ["Outfit"],
+                      "display-lg": ["Outfit"],
+                      "headline-lg-mobile": ["Outfit"],
+                      "headline-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant/20 flex flex-col py-8 z-50">
+<div class="px-6 mb-12">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">ELITE MIGRACIÓN</h1>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active Navigation: Overview -->
+<a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 flex items-center px-4 py-3 transition-all duration-200" href="dashboard.html">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="booking.html">
+<span class="material-symbols-outlined mr-3">calendar_month</span>
+<span class="font-label-md text-label-md">Appointments</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="chat.html">
+<span class="material-symbols-outlined mr-3">chat</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="index.html">
+<span class="material-symbols-outlined mr-3">home</span>
+<span class="font-label-md text-label-md">Home Portal</span>
+</a>
+<div class="pt-6 px-4">
+<span class="block font-label-md text-[10px] text-on-surface-variant uppercase tracking-widest mb-4 px-2">Help Channels</span>
+<div class="space-y-3">
+<a class="flex items-center text-on-surface-variant hover:text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg mr-3">send</span>
+<span class="text-sm">PCE Cuba Telegram</span>
+</a>
+<a class="flex items-center text-on-surface-variant hover:text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg mr-3">school</span>
+<span class="text-sm">Escuela PCE</span>
+</a>
+</div>
+</div></nav>
+<div class="mt-auto px-2 space-y-2">
+<a href="booking.html" class="block w-full mb-6 py-3 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:opacity-90 transition-opacity text-center">
+                Book Session
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-variant/10 flex items-center px-4 py-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/10 flex items-center px-4 py-3 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined mr-3">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pl-64 min-h-screen">
+<!-- Top Navigation -->
+<header class="fixed top-0 right-0 left-64 h-20 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-8 z-40">
+<div class="flex items-center space-x-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Welcome back,</span>
+<span class="font-label-md text-label-md text-secondary">Alexander Sterling</span>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-colors">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-variant/30 border border-outline-variant/30 overflow-hidden">
+<img alt="Professional User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPfQfMNDJQ5fW9xnggNlVgy1LXqDat_ToJHo01GzO5iF3UE_EKYb5gkmBxUEZNTgznTFSoN1exZitoG9u2dxNcsOmLWZmeNKnsPx-awgY0NNwxPGNOBDlM4pk1S1LihTbLMfWhvWC6ue4SIH2H4asPZ3dw0sSzbnlcRHcerWSi86RmXWGtF_Quq8Ze-C11fPvewbjsiXvdrtGmSqo0WFfWKNF2aFFNCh0MT3ZBL4uNbSSowgbTDHjKM7SbCGa19PG_D9pFOGvVADs"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Body -->
+<div class="pt-28 px-8 pb-12 max-w-[1400px] mx-auto">
+<!-- Hero / Profile Status Section -->
+<section class="mb-12">
+<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="z-10 w-full md:w-1/2">
+<h2 class="font-display-lg text-display-lg text-primary mb-2">Elite Status: Gold</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Your visa application is 85% complete. Next step: Final Documentation Review.</p>
+<!-- Progress Indicator -->
+<div class="space-y-2">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-secondary">Profile Completion</span>
+<span class="font-label-md text-label-md text-primary">85%</span>
+</div>
+<div class="progress-line w-full rounded-full overflow-hidden">
+<div class="progress-fill w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 flex justify-end items-center space-x-4">
+<div class="text-right">
+<span class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Next Milestone</span>
+<span class="block font-headline-md text-headline-md text-secondary">Advisor Audit</span>
+</div>
+<div class="w-16 h-16 glass-overlay rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Atmospheric Effect -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full"></div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Appointments Preview -->
+<div class="md:col-span-8 glass-card rounded-xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-primary">Upcoming Appointments</h3>
+<a class="font-label-md text-label-md text-secondary hover:underline" href="#">View Calendar</a>
+</div>
+<div class="space-y-4">
+<!-- Appointment Row 1 -->
+<div class="group flex items-center p-4 rounded-lg bg-surface-variant/10 border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-surface-variant/20 flex flex-col items-center justify-center mr-6 border border-outline-variant/20">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">Oct</span>
+<span class="text-lg font-bold text-primary">12</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Visa Strategy Session</h4>
+<div class="flex items-center text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm mr-1">person</span>
+<span>Dr. Elena Vance</span>
+<span class="mx-2 opacity-30">|</span>
+<span class="material-symbols-outlined text-sm mr-1">schedule</span>
+<span>10:30 AM EST</span>
+</div>
+</div>
+<button class="px-4 py-2 rounded border border-secondary/50 text-secondary font-label-md text-[12px] opacity-0 group-hover:opacity-100 transition-all hover:bg-secondary hover:text-on-secondary">
+                                Join Call
+                            </button>
+</div>
+<!-- Appointment Row 2 -->
+<div class="group flex items-center p-4 rounded-lg bg-surface-variant/10 border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-surface-variant/20 flex flex-col items-center justify-center mr-6 border border-outline-variant/20">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">Oct</span>
+<span class="text-lg font-bold text-primary">15</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Tax Residency Briefing</h4>
+<div class="flex items-center text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm mr-1">person</span>
+<span>Marcus Thorne</span>
+<span class="mx-2 opacity-30">|</span>
+<span class="material-symbols-outlined text-sm mr-1">schedule</span>
+<span>02:00 PM EST</span>
+</div>
+</div>
+<button class="px-4 py-2 rounded border border-secondary/50 text-secondary font-label-md text-[12px] opacity-0 group-hover:opacity-100 transition-all hover:bg-secondary hover:text-on-secondary">
+                                Reschedule
+                            </button>
+</div>
+</div>
+</div>
+<!-- Messages Sidebar Widget -->
+<div class="md:col-span-4 glass-card rounded-xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-primary">Messages</h3>
+<span class="bg-secondary/20 text-secondary px-2 py-0.5 rounded text-[10px] font-bold">2 NEW</span>
+</div>
+<div class="flex-1 space-y-6">
+<!-- Message 1 -->
+<div class="flex items-start gap-4 cursor-pointer group">
+<div class="relative">
+<img alt="Advisor" class="w-10 h-10 rounded-full border border-secondary/30 group-hover:border-secondary transition-colors" data-alt="Close up portrait of a professional female advisor with a warm but serious expression, soft natural office lighting, high-end photography style with shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY4eh9v0infyHAno6q2nYLVdSoRNJJN-0AyPCgYNmRg2USPb3y0B49NyRcwDzVpKRra4idp_4_zRa5slHcKq7odP7yZK8akjbUeVNLPwzwVyhxotS-HO_DchWYPqmC8_KHiSObSNNaLd8Qg0lfGBfzpaDsrjZXYrH6OweS35d4wqZuT_TCNdeSy8_y3tY8vJYgiKvvySjNwRjy48cKorD30tfDujbQdWEal63m6KoTLTfU_ZXhsOQxrHO9fEkU3tILan47s_PLuNg"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-background rounded-full"></span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-start mb-1">
+<h5 class="font-label-md text-label-md text-on-surface truncate">Sarah Jenkins</h5>
+<span class="text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">I've reviewed your latest documents. Please sign the attached...</p>
+</div>
+</div>
+<!-- Message 2 -->
+<div class="flex items-start gap-4 cursor-pointer group">
+<div class="relative">
+<img alt="Advisor" class="w-10 h-10 rounded-full border border-outline-variant/30 group-hover:border-secondary transition-colors" data-alt="Professional male in a tailored suit, modern corporate setting, soft rim lighting to separate from the dark background, conveying trust and premium executive mentorship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY-kJecg68_msr3i3PqcQ8iv7ubRO3MG-PgoQ2rP2W8sowXy7cEKngLzIXInuyNv8Qu0I8T3PMeLpbZo7xMCruG-_9-IozkUArJhBvLBNFFmgYYCwpFTHJvKYEdw0X3osxDAY4wsC8eICEM-OAumgnqmv69Ig52GbFLQuMGzKqxzrL_HXzMADZCanuNCWXGp1OODCrGznaAkE4He1KsiY9AE89JBv0XEbJmb6TsHlssfWZ1IE_4PAMgGBEwdgpBNF-0sVhjKzNxrY"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-on-surface-variant border-2 border-background rounded-full"></span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-start mb-1">
+<h5 class="font-label-md text-label-md text-on-surface truncate">Robert Chen</h5>
+<span class="text-[10px] text-on-surface-variant">1h ago</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">The embassy confirmed receipt of your file. Congratulations on...</p>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full py-3 rounded border border-outline-variant/30 text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant/10 transition-colors">
+                        Go to Inbox
+                    </button>
+</div>
+<!-- Secondary Row - Resources & Activity -->
+<div class="glass-card rounded-xl p-6 hover:translate-y-[-4px] transition-transform cursor-pointer group relative">
+<div class="absolute -top-2 -right-2 bg-secondary text-on-secondary px-2 py-0.5 rounded text-[10px] font-bold z-10">NEW</div>
+<div class="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary">description</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">Migration Pathways (Cuba)</h4>
+<p class="text-sm text-on-surface-variant mb-4">2024 Integral Study: Specialized coverage for 18-year-old graduates and technology evasion tools.</p>
+<div class="flex items-center text-secondary text-[12px] font-bold">
+        VIEW STUDY <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div><div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-8"><div class="glass-card rounded-xl p-6 hover:translate-y-[-4px] transition-transform cursor-pointer group">
+<div class="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary">person_search</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">User Persona: Yariel, el Graduado</h4>
+<div class="space-y-2 mb-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Age:</span>
+<span class="text-on-surface">18 years old</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Focus:</span>
+<span class="text-on-surface">PCE-UNEDasiss</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Primary Fear:</span>
+<span class="text-error">Burnout Extranjero</span>
+</div>
+</div>
+<div class="flex items-center text-secondary text-[12px] font-bold">
+VIEW PROFILE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+<!-- Resource Card 1 -->
+<div class="glass-card rounded-xl p-6 hover:translate-y-[-4px] transition-transform cursor-pointer group">
+<div class="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary">description</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">Relocation Guide 2024</h4>
+<p class="text-sm text-on-surface-variant mb-4">A comprehensive look at the new lifestyle standards and logistics.</p>
+<div class="flex items-center text-secondary text-[12px] font-bold">
+                            DOWNLOAD PDF <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+<!-- Resource Card 2 -->
+<div class="glass-card rounded-xl p-6 hover:translate-y-[-4px] transition-transform cursor-pointer group">
+<div class="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary">payments</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-2">Investment Structures</h4>
+<p class="text-sm text-on-surface-variant mb-4">Detailed breakdown of optimal fiscal vehicles for your transition.</p>
+<div class="flex items-center text-secondary text-[12px] font-bold">
+                            VIEW MODULE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+<!-- Status Summary -->
+<div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest block mb-1">Consultation Hours</span>
+<span class="text-2xl font-bold text-primary">12 / 20</span>
+</div>
+<div class="w-10 h-10 bg-secondary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">timer</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="progress-line w-full rounded-full overflow-hidden h-1">
+<div class="progress-fill w-[60%] rounded-full h-1"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-2 italic">8 hours remaining in your current premium tier.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/30 mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto space-y-6 md:space-y-0">
+<div class="text-secondary font-headline-md text-headline-md">ELITE MIGRACIÓN</div>
+<div class="flex flex-col items-center md:items-end">
+<div class="flex space-x-6 mb-4">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="font-caption text-caption text-on-surface-variant">© 2024 ELITE MIGRACIÓN. All Rights Reserved.</div>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple intersection observer for subtle fade-in of cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+            observer.observe(card);
+        });
+
+        // Hover sound/haptic simulation
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                // Micro-interaction logic could go here
+            });
+        });
+    </script>
+</body></html>
