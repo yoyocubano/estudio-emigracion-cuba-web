@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ELITE MIGRACIÓN | Advisor Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ELITE MIGRACIÓN | Panel de Control</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
@@ -43,7 +42,7 @@
             background-color: #D4AF37;
         }
     </style>
-<script id="tailwind-config">
+    <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
@@ -137,372 +136,486 @@
     </script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased">
-<!-- Sidebar Navigation Shell -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant/20 flex flex-col py-8 z-50">
-<div class="px-6 mb-12">
-<h1 class="font-headline-md text-headline-md text-primary tracking-tight">ELITE MIGRACIÓN</h1>
-</div>
-<nav class="flex-1 space-y-2">
-<!-- Active Navigation: Overview -->
-<a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 flex items-center px-4 py-3 transition-all duration-200" href="dashboard.html">
-<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-<span class="font-label-md text-label-md">Overview</span>
-</a>
-<a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="booking.html">
-<span class="material-symbols-outlined mr-3">calendar_month</span>
-<span class="font-label-md text-label-md">Appointments</span>
-</a>
-<a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="chat.html">
-<span class="material-symbols-outlined mr-3">chat</span>
-<span class="font-label-md text-label-md">Messages</span>
-</a>
-<a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="index.html">
-<span class="material-symbols-outlined mr-3">home</span>
-<span class="font-label-md text-label-md">Home Portal</span>
-</a>
-<div class="pt-6 px-4">
-<span class="block font-label-md text-[10px] text-on-surface-variant uppercase tracking-widest mb-4 px-2">Help Channels</span>
-<div class="space-y-3">
-<a class="flex items-center text-on-surface-variant hover:text-secondary transition-colors group" href="#">
-<span class="material-symbols-outlined text-lg mr-3">send</span>
-<span class="text-sm">PCE Cuba Telegram</span>
-</a>
-<a class="flex items-center text-on-surface-variant hover:text-secondary transition-colors group" href="#">
-<span class="material-symbols-outlined text-lg mr-3">school</span>
-<span class="text-sm">Escuela PCE</span>
-</a>
-</div>
-</div></nav>
-<div class="mt-auto px-2 space-y-2">
-<a href="booking.html" class="block w-full mb-6 py-3 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:opacity-90 transition-opacity text-center">
-                Book Session
-            </a>
-<a class="text-on-surface-variant hover:bg-surface-variant/10 flex items-center px-4 py-3 transition-all duration-200" href="#">
-<span class="material-symbols-outlined mr-3">help</span>
-<span class="font-label-md text-label-md">Support</span>
-</a>
-<a class="text-on-surface-variant hover:bg-surface-variant/10 flex items-center px-4 py-3 transition-all duration-200" href="index.html">
-<span class="material-symbols-outlined mr-3">logout</span>
-<span class="font-label-md text-label-md">Logout</span>
-</a>
-</div>
-</aside>
-<!-- Main Content Canvas -->
-<main class="pl-64 min-h-screen">
-<!-- Top Navigation -->
-<header class="fixed top-0 right-0 left-64 h-20 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-8 z-40">
-<div class="flex items-center space-x-2">
-<span class="font-label-md text-label-md text-on-surface-variant">Welcome back,</span>
-<span class="font-label-md text-label-md text-secondary">Alexander Sterling</span>
-</div>
-<div class="flex items-center space-x-6">
-<div class="relative">
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-colors">notifications</span>
-<span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
-</div>
-<div class="w-10 h-10 rounded-full bg-surface-variant/30 border border-outline-variant/30 overflow-hidden">
-<img alt="Professional User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPfQfMNDJQ5fW9xnggNlVgy1LXqDat_ToJHo01GzO5iF3UE_EKYb5gkmBxUEZNTgznTFSoN1exZitoG9u2dxNcsOmLWZmeNKnsPx-awgY0NNwxPGNOBDlM4pk1S1LihTbLMfWhvWC6ue4SIH2H4asPZ3dw0sSzbnlcRHcerWSi86RmXWGtF_Quq8Ze-C11fPvewbjsiXvdrtGmSqo0WFfWKNF2aFFNCh0MT3ZBL4uNbSSowgbTDHjKM7SbCGa19PG_D9pFOGvVADs"/>
-</div>
-</div>
-</header>
-<!-- Dashboard Body -->
-<div class="pt-28 px-8 pb-12 max-w-[1400px] mx-auto">
-<!-- Hero / Profile Status Section -->
-<section class="mb-12">
-<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-<div class="z-10 w-full md:w-1/2">
-<h2 class="font-display-lg text-display-lg text-primary mb-2">Elite Status: Gold</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Your visa application is 85% complete. Next step: Final Documentation Review.</p>
-<!-- Progress Indicator -->
-<div class="space-y-2">
-<div class="flex justify-between items-end mb-2">
-<span class="font-label-md text-label-md text-secondary">Profile Completion</span>
-<span class="font-label-md text-label-md text-primary">85%</span>
-</div>
-<div class="progress-line w-full rounded-full overflow-hidden">
-<div class="progress-fill w-[85%] rounded-full"></div>
-</div>
-</div>
-</div>
-<div class="w-full md:w-1/3 flex justify-end items-center space-x-4">
-<div class="text-right">
-<span class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Next Milestone</span>
-<span class="block font-headline-md text-headline-md text-secondary">Advisor Audit</span>
-</div>
-<div class="w-16 h-16 glass-overlay rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-</div>
-<!-- Atmospheric Effect -->
-<div class="absolute -right-20 -top-20 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full"></div>
-</div>
-</section>
-<!-- Interactivo Hub Cuba 2026 -->
-<div class="glass-card rounded-xl p-8 mb-12">
-    <div class="flex flex-col lg:flex-row gap-8">
-        <!-- Tab Navigation Sidebar -->
-        <div class="w-full lg:w-1/4 flex flex-col gap-2 border-b lg:border-b-0 lg:border-r border-outline-variant/20 pb-6 lg:pb-0 lg:pr-6">
-            <h3 class="font-headline-md text-headline-md text-primary mb-6">Estudio Cuba 2026</h3>
-            <button onclick="switchTab('mapa')" id="btn-mapa" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 bg-secondary-container text-on-secondary-container cursor-pointer">
-                🗺️ Mapa Mental: Rutas
-            </button>
-            <button onclick="switchTab('portugal')" id="btn-portugal" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
-                🇵🇹 Portugal (Procura Trabalho)
-            </button>
-            <button onclick="switchTab('tramites')" id="btn-tramites" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
-                📄 Trámites y MINJUS Cuba
-            </button>
-            <button onclick="switchTab('plan12')" id="btn-plan12" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
-                ⚡ Plan Nómada Digital IA
-            </button>
-            <button onclick="switchTab('evasion')" id="btn-evasion" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
-                🛠️ Evasión y Conectividad
-            </button>
+    <!-- Sidebar Navigation -->
+    <aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/20 flex flex-col py-8 z-50">
+        <div class="px-6 mb-12">
+            <h1 class="font-headline-md text-headline-md text-primary tracking-tight font-bold text-gold">ELITE MIGRACIÓN</h1>
         </div>
-
-        <!-- Tab Content Display Area -->
-        <div class="flex-1 lg:pl-6 min-h-[500px]">
-            <!-- TAB: MAPA MENTAL -->
-            <div id="tab-mapa" class="tab-content block space-y-6">
-                <h4 class="font-display-md text-display-md text-secondary">Rutas Migratorias Cuba-Europa</h4>
-                <p class="text-on-surface-variant font-body-lg">Visión general fáctica de las vías activas y más accesibles para bachilleres cubanos en 2026.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
-                        <h5 class="text-primary font-label-md text-lg mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">school</span> España (Vía Académica)</h5>
-                        <p class="text-sm text-on-surface-variant mb-2"><strong>Matrícula oficial / FP:</strong> Concede visado con derecho automático a trabajar hasta 30h/semanales.</p>
-                        <p class="text-sm text-on-surface-variant"><strong>Solvencia:</strong> 100% IPREM (7.200€ al año) demostrables en bancos cubanos o mediante Acta de Sostenimiento Familiar.</p>
-                    </div>
-                    <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
-                        <h5 class="text-primary font-label-md text-lg mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">work</span> Portugal (Búsqueda de Empleo)</h5>
-                        <p class="text-sm text-on-surface-variant mb-2"><strong>Visado 120 días:</strong> Permite ingresar a buscar trabajo de forma legal. Transición directa a residencia temporal D3.</p>
-                        <p class="text-sm text-on-surface-variant"><strong>Baja Solvencia:</strong> 3 salarios mínimos portugueses brutos (2.760€ en ahorros líquidos).</p>
-                    </div>
-                    <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
-                        <h5 class="text-primary font-label-md text-lg mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">badge</span> Alemania (Chancenkarte)</h5>
-                        <p class="text-sm text-on-surface-variant mb-2"><strong>Tarjeta de Oportunidad:</strong> Búsqueda de empleo con sistema de puntos (edad, idioma alemán/inglés, cualificaciones).</p>
-                        <p class="text-sm text-on-surface-variant"><strong>FP Dual (Ausbildung):</strong> Combina estudios técnicos con salario mínimo financiado.</p>
-                    </div>
-                    <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
-                        <h5 class="text-primary font-label-md text-lg mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">verified_user</span> Italia (Beca DSU)</h5>
-                        <p class="text-sm text-on-surface-variant mb-2"><strong>Beca DSU:</strong> Cobertura total de estudios superiores e ingresos de manutención basados en condiciones económicas del solicitante.</p>
-                        <p class="text-sm text-on-surface-variant"><strong>Jure Sanguinis:</strong> Nacionalidad para descendientes bajo regulaciones consulares actualizadas.</p>
-                    </div>
+        <nav class="flex-1 space-y-2">
+            <a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 flex items-center px-4 py-3 transition-all duration-200" href="dashboard.html">
+                <span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                <span class="font-label-md text-label-md">Mi Ruta</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="booking.html">
+                <span class="material-symbols-outlined mr-3">calendar_month</span>
+                <span class="font-label-md text-label-md">Asesorías</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="chat.html">
+                <span class="material-symbols-outlined mr-3">chat</span>
+                <span class="font-label-md text-label-md">Chat Directo</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant/10 mx-2 flex items-center px-4 py-3 transition-all duration-200 hover:scale-[1.02]" href="index.html">
+                <span class="material-symbols-outlined mr-3">home</span>
+                <span class="font-label-md text-label-md">Inicio</span>
+            </a>
+            <div class="pt-6 px-4">
+                <span class="block font-label-md text-[10px] text-on-surface-variant uppercase tracking-widest mb-4 px-2">Canales de Ayuda</span>
+                <div class="space-y-3">
+                    <a class="flex items-center text-on-surface-variant hover:text-secondary transition-colors group" href="https://t.me/pcecuba" target="_blank">
+                        <span class="material-symbols-outlined text-lg mr-3">send</span>
+                        <span class="text-sm">PCE Cuba Telegram</span>
+                    </a>
+                    <a class="flex items-center text-on-surface-variant hover:text-secondary transition-colors group" href="https://unedasiss.uned.es" target="_blank">
+                        <span class="material-symbols-outlined text-lg mr-3">school</span>
+                        <span class="text-sm">Portal UNEDasiss</span>
+                    </a>
                 </div>
             </div>
+        </nav>
+        <div class="mt-auto px-2 space-y-2">
+            <a href="booking.html" class="block w-full mb-6 py-3 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:opacity-90 transition-opacity text-center text-black font-bold">
+                Reservar Cita
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant/10 flex items-center px-4 py-3 transition-all duration-200" href="#">
+                <span class="material-symbols-outlined mr-3">help</span>
+                <span class="font-label-md text-label-md">Soporte</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant/10 flex items-center px-4 py-3 transition-all duration-200" href="index.html">
+                <span class="material-symbols-outlined mr-3">logout</span>
+                <span class="font-label-md text-label-md">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
 
-            <!-- TAB: PORTUGAL -->
-            <div id="tab-portugal" class="tab-content hidden space-y-6">
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-1 space-y-4">
-                        <h4 class="font-display-md text-display-md text-secondary">🇵🇹 Ruta Portugal: Visado de Búsqueda de Empleo</h4>
-                        <p class="text-on-surface-variant font-body-lg">La opción más directa para acceder legalmente al mercado laboral europeo sin patrocinio inicial.</p>
-                        
-                        <div class="space-y-3">
-                            <h5 class="text-primary font-label-md text-md">Requisitos de la Embajada de Portugal en La Habana:</h5>
-                            <ul class="text-sm text-on-surface-variant space-y-2 list-disc pl-4">
-                                <li><strong>Pre-registro IEFP:</strong> Inscripción previa obligatoria en la bolsa de empleo del Instituto de Empleo y Formación Profesional de Portugal.</li>
-                                <li><strong>Solvencia Económica:</strong> Acreditación de fondos líquidos equivalentes a 3 salarios mínimos (<strong>2.760€</strong>). Se permite sustituir con un "Término de Responsabilidad" firmado por un ciudadano/residente legal portugués.</li>
-                                <li><strong>Antecedentes Penales:</strong> Certificado expedido por el Registro Civil de Cuba, legalizado por el MINJUS y el Consulado portugués en La Habana.</li>
-                                <li><strong>Otros Documentos:</strong> Pasaporte vigente, pasaje de ida y vuelta, seguro médico con cobertura internacional de 30.000€ y reserva de alojamiento.</li>
-                            </ul>
-                        </div>
-
-                        <div class="p-4 rounded bg-secondary/10 border border-secondary/20">
-                            <p class="text-xs text-on-secondary-container"><strong>💡 Cómo acceder a los trabajos:</strong> Portugal experimenta escasez severa de mano de obra en sectores como hotelería, servicios, turismo y agricultura. Los cubanos que ingresan con este visado pueden entrevistarse directamente y, tras firmar contrato de trabajo por cuenta ajena, solicitar su regularización de residencia D3 de manera instantánea y dentro del país.</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-[300px] flex-shrink-0">
-                        <img src="lisbon_cafe_passport.png" alt="Pasaporte cubano en cafetería de Lisboa" class="w-full rounded-lg shadow-xl border border-outline-variant/30 object-cover aspect-square"/>
-                        <p class="text-[11px] text-on-surface-variant mt-2 text-center italic">Foto real tomada con iPhone en Lisboa, Portugal.</p>
-                    </div>
+    <!-- Main Content -->
+    <main class="pl-64 min-h-screen">
+        <!-- Top Navigation -->
+        <header class="fixed top-0 right-0 left-64 h-20 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-8 z-40">
+            <div class="flex items-center space-x-2">
+                <span class="font-label-md text-label-md text-on-surface-variant">Hola de nuevo,</span>
+                <span class="font-label-md text-label-md text-secondary font-bold">Alexander Sterling</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-colors">notifications</span>
+                    <span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-surface-variant/30 border border-outline-variant/30 overflow-hidden">
+                    <img alt="Foto de Perfil" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPfQfMNDJQ5fW9xnggNlVgy1LXqDat_ToJHo01GzO5iF3UE_EKYb5gkmBxUEZNTgznTFSoN1exZitoG9u2dxNcsOmLWZmeNKnsPx-awgY0NNwxPGNOBDlM4pk1S1LihTbLMfWhvWC6ue4SIH2H4asPZ3dw0sSzbnlcRHcerWSi86RmXWGtF_Quq8Ze-C11fPvewbjsiXvdrtGmSqo0WFfWKNF2aFFNCh0MT3ZBL4uNbSSowgbTDHjKM7SbCGa19PG_D9pFOGvVADs"/>
                 </div>
             </div>
+        </header>
 
-            <!-- TAB: TRAMITES CUBA -->
-            <div id="tab-tramites" class="tab-content hidden space-y-6">
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-1 space-y-4">
-                        <h4 class="font-display-md text-display-md text-secondary">📄 Legalizaciones y Trámites en Cuba (2025/2026)</h4>
-                        <p class="text-on-surface-variant font-body-lg">Entiende los drásticos cambios administrativos del sistema de trámites cubano para el exterior.</p>
-                        
-                        <div class="space-y-3">
-                            <h5 class="text-primary font-label-md text-md">Control Absoluto del MINJUS:</h5>
-                            <p class="text-sm text-on-surface-variant">Desde el <strong>2 de abril de 2025</strong>, el **Ministerio de Justicia (MINJUS)** y no el MINREX es el único ente facultado para legalizar certificaciones registrales (nacimiento, soltería) y notariales para el exterior en primera instancia.</p>
-                            
-                            <h5 class="text-primary font-label-md text-md">Emisión de Documentos Digitales (Resolución 284/2025):</h5>
-                            <p class="text-sm text-on-surface-variant">Los documentos notariales ahora se emiten digitalmente con **código QR y firma electrónica** mediante la Infraestructura Nacional de Llave Pública, agilizando enormemente los trámites consulares.</p>
-
-                            <h5 class="text-primary font-label-md text-md">La Realidad de la "Apostilla":</h5>
-                            <p class="text-sm text-on-surface-variant"><strong>Cuba NO pertenece al Convenio de La Haya</strong>. Toda mención a la "Apostilla" en trámites cubanos es incorrecta. El único proceso válido en la isla es la **Legalización Consular tradicional** ante la embajada correspondiente en La Habana.</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-[300px] flex-shrink-0">
-                        <img src="cuban_legalization_documents.png" alt="Documentos del MINJUS de Cuba con firmas" class="w-full rounded-lg shadow-xl border border-outline-variant/30 object-cover aspect-square"/>
-                        <p class="text-[11px] text-on-surface-variant mt-2 text-center italic">Documento oficial digitalizado del MINJUS en mesa de trámites.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB: PLAN 12 MESES -->
-            <div id="tab-plan12" class="tab-content hidden space-y-6">
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-1 space-y-4">
-                        <h4 class="font-display-md text-display-md text-secondary">⚡ Mi Hoja de Ruta Dinámica: Cuba a Europa</h4>
-                        <p class="text-on-surface-variant font-body-lg">Completa cada paso del plan y realiza el seguimiento de tu progreso real. Diseñado estratégicamente para evitar gastos innecesarios.</p>
-                        
-                        <!-- Progreso Local -->
-                        <div class="glass-overlay p-4 rounded-lg border border-outline-variant/20 mb-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs font-bold text-on-secondary-container uppercase tracking-wider">Tu Progreso de Emigración</span>
-                                <span id="timeline-progress-text" class="text-sm font-bold text-secondary">0%</span>
+        <!-- Dashboard Body -->
+        <div class="pt-28 px-8 pb-12 max-w-[1400px] mx-auto">
+            <!-- Hero / Profile Status Section -->
+            <section class="mb-12">
+                <div class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+                    <div class="z-10 w-full md:w-1/2">
+                        <h2 class="font-display-lg text-display-lg text-primary mb-2 font-bold text-gold">Estado Elite: Oro</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Tu plan de emigración está al 85%. Siguiente paso: Revisión final de documentos legalizados.</p>
+                        <!-- Progress Indicator -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="font-label-md text-label-md text-secondary">Completado</span>
+                                <span class="font-label-md text-label-md text-primary">85%</span>
                             </div>
                             <div class="progress-line w-full rounded-full overflow-hidden">
-                                <div id="timeline-progress-bar" class="progress-fill w-[0%] rounded-full h-1"></div>
-                            </div>
-                        </div>
-
-                        <!-- Timeline list -->
-                        <div class="relative pl-6 border-l border-secondary/30 space-y-6">
-                            <!-- Paso 1 -->
-                            <div class="relative flex items-start">
-                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
-                                    <input type="checkbox" id="step-1" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
-                                </span>
-                                <div class="ml-2">
-                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 1: 💰 Viabilidad de Fondos y Solvencia</h5>
-                                    <p class="text-xs text-on-surface-variant mt-0.5">Asegura los ahorros mínimos líquidos (<strong>2.760€</strong> para Portugal o <strong>7.200€</strong> para España) en cuentas bancarias cubanas (Banco Metropolitano, BANDEC, BPA) o redacta el Acta Notarial de Sostenimiento Familiar con tus patrocinadores directos.</p>
-                                </div>
-                            </div>
-                            <!-- Paso 2 -->
-                            <div class="relative flex items-start">
-                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
-                                    <input type="checkbox" id="step-2" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
-                                </span>
-                                <div class="ml-2">
-                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 2: 🎓 Pre-registro IEFP o Admisión Académica</h5>
-                                    <p class="text-xs text-on-surface-variant mt-0.5">Regístrate en la plataforma del IEFP (Portugal) para búsqueda de empleo o asegura la carta de admisión oficial en un centro académico o curso de FP homologado (España).</p>
-                                </div>
-                            </div>
-                            <!-- Paso 3 -->
-                            <div class="relative flex items-start border-2 border-secondary/20 p-3 rounded-lg bg-secondary/5">
-                                <span class="absolute -left-[32px] top-4.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
-                                    <input type="checkbox" id="step-3" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
-                                </span>
-                                <div class="ml-2">
-                                    <h5 class="font-label-md text-label-md text-secondary font-bold flex items-center">
-                                        <span class="material-symbols-outlined text-sm mr-1">warning</span> Paso 3: 🛂 Solicitud de Pasaporte Cubano
-                                    </h5>
-                                    <p class="text-xs text-on-surface-variant mt-0.5"><strong>[PASO CLAVE POSTERIOR]</strong> Solicita tu pasaporte en Cuba <u>únicamente después</u> de haber verificado los fondos y asegurado la admisión/pre-registro. Esto evita pérdidas económicas y pagos innecesarios en caso de no cumplir con los requisitos previos.</p>
-                                </div>
-                            </div>
-                            <!-- Paso 4 -->
-                            <div class="relative flex items-start">
-                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
-                                    <input type="checkbox" id="step-4" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
-                                </span>
-                                <div class="ml-2">
-                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 4: 🏛️ Legalizaciones en el MINJUS</h5>
-                                    <p class="text-xs text-on-surface-variant mt-0.5">Legaliza tus títulos y documentos de registro civil a través de la vía digital del Ministerio de Justicia (MINJUS), usando el portal con firma electrónica y código QR.</p>
-                                </div>
-                            </div>
-                            <!-- Paso 5 -->
-                            <div class="relative flex items-start">
-                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
-                                    <input type="checkbox" id="step-5" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
-                                </span>
-                                <div class="ml-2">
-                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 5: 📅 Cita Consular en La Habana</h5>
-                                    <p class="text-xs text-on-surface-variant mt-0.5">Envía el correo al Consulado con el formato estructurado y el asunto obligatorio (`CITA VISADO RES` o `CITA LEGA`) para obtener tu turno oficial.</p>
-                                </div>
-                            </div>
-                            <!-- Paso 6 -->
-                            <div class="relative flex items-start">
-                                <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
-                                    <input type="checkbox" id="step-6" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
-                                </span>
-                                <div class="ml-2">
-                                    <h5 class="font-label-md text-label-md text-primary font-bold">Paso 6: ✈️ Reserva Onward Ticket y Seguro</h5>
-                                    <p class="text-xs text-on-surface-variant mt-0.5">Contrata el seguro de viaje obligatorio de 30.000€ y emite un pasaje Onward Ticket para la aerolínea sin comprar el billete final.</p>
-                                </div>
+                                <div class="progress-fill w-[85%] rounded-full"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full md:w-[300px] flex-shrink-0">
-                        <img src="cuban_youth_laptop_havana.png" alt="Estudiante cubano con laptop vieja trabajando en casa" class="w-full rounded-lg shadow-xl border border-outline-variant/30 object-cover aspect-square"/>
-                        <p class="text-[11px] text-on-surface-variant mt-2 text-center italic">Estudiante cubano de 18 años trabajando en remoto desde La Habana.</p>
+                    <div class="w-full md:w-1/3 flex justify-end items-center space-x-4">
+                        <div class="text-right">
+                            <span class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-widest text-xs">Próximo Hito</span>
+                            <span class="block font-headline-md text-headline-md text-secondary font-semibold">Auditoría del Asesor</span>
+                        </div>
+                        <div class="w-16 h-16 glass-overlay rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        </div>
                     </div>
+                    <!-- Atmospheric Effect -->
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full"></div>
                 </div>
-            </div>
+            </section>
 
-            <!-- TAB: EVASION -->
-            <div id="tab-evasion" class="tab-content hidden space-y-6">
-                <h4 class="font-display-md text-display-md text-secondary">🛠️ Herramientas Digitales y Evasión de Bloqueos</h4>
-                <p class="text-on-surface-variant font-body-lg">Soluciones técnicas indispensables para operar comercial y educativamente desde Cuba.</p>
-                
-                <div class="space-y-4">
-                    <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
-                        <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">vpn_lock</span> Conectividad y Evasión de DPI (Deep Packet Inspection)</h5>
-                        <p class="text-sm text-on-surface-variant">ETECSA bloquea las conexiones VPN comerciales estándar. Es necesario configurar **VPNs con protocolos Stealth** o túneles cifrados:</p>
-                        <ul class="text-xs text-on-surface-variant space-y-1 list-disc pl-6 mt-2">
-                            <li><strong>Shadowsocks / v2ray:</strong> Evita el escaneo activo de paquetes del firewall.</li>
-                            <li><strong>WStunnel:</strong> Envuelve el tráfico VPN en conexiones WebSocket estándar que parecen tráfico web común.</li>
-                            <li>Aislamiento geográfico estricto al realizar pagos por terceros desde el exterior en la plataforma UNEDasiss.</li>
-                        </ul>
+            <!-- Interactivo Hub Cuba 2026 -->
+            <div class="glass-card rounded-xl p-8 mb-12">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Tab Navigation Sidebar -->
+                    <div class="w-full lg:w-1/4 flex flex-col gap-2 border-b lg:border-b-0 lg:border-r border-outline-variant/20 pb-6 lg:pb-0 lg:pr-6">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-6 font-bold">Estudio Cuba 2026</h3>
+                        <button onclick="switchTab('mapa')" id="btn-mapa" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 bg-secondary-container text-on-secondary-container cursor-pointer font-semibold">
+                            🗺️ Mapa de Rutas
+                        </button>
+                        <button onclick="switchTab('portugal')" id="btn-portugal" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
+                            🇵🇹 Portugal (Búsqueda Empleo)
+                        </button>
+                        <button onclick="switchTab('tramites')" id="btn-tramites" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
+                            📄 Trámites y MINJUS Cuba
+                        </button>
+                        <button onclick="switchTab('plan12')" id="btn-plan12" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
+                            ⚡ Línea de Tiempo Dinámica
+                        </button>
+                        <button onclick="switchTab('evasion')" id="btn-evasion" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
+                            🛠️ Conectividad y Evasión
+                        </button>
+                        <button onclick="switchTab('consulados')" id="btn-consulados" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
+                            🏛️ Consulados y Enlaces
+                        </button>
                     </div>
 
-                    <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
-                        <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">airplane_ticket</span> Onward Ticket (Reserva de Salida)</h5>
-                        <p class="text-sm text-on-surface-variant">El visado de Portugal exige pasaje de regreso. Para evitar comprar un pasaje costoso antes de tener el visado aprobado, se recomienda usar servicios de **Onward Ticket** (reservas de vuelos reales verificables en aerolíneas que se cancelan automáticamente en 48h por un coste marginal de $10-$15).</p>
-                    </div>
+                    <!-- Tab Content Display Area -->
+                    <div class="flex-1 lg:pl-6 min-h-[500px]">
+                        <!-- TAB: MAPA MENTAL -->
+                        <div id="tab-mapa" class="tab-content block space-y-6">
+                            <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">Rutas Migratorias Cuba-Europa 2026</h4>
+                            <p class="text-on-surface-variant font-body-lg">Visión fáctica de las vías legales reales para jóvenes cubanos. Conoce tus opciones antes de dar pasos en falso.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
+                                    <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">school</span> España (Vía Estudios)</h5>
+                                    <p class="text-sm text-on-surface-variant mb-2"><strong>Para FP o Universidad:</strong> Permite trabajar legalmente hasta 30 horas semanales. Al graduarte, cambias directo a residencia y trabajo.</p>
+                                    <p class="text-sm text-on-surface-variant"><strong>Solvencia:</strong> 7.200 € al año (100% IPREM). Se admiten patrocinadores familiares directos en el exterior.</p>
+                                </div>
+                                <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
+                                    <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">work</span> Portugal (Búsqueda de Empleo)</h5>
+                                    <p class="text-sm text-on-surface-variant mb-2"><strong>Visa de 120 días:</strong> Viajas directo a buscar trabajo de forma legal. Si firmas contrato formal, obtienes residencia.</p>
+                                    <p class="text-sm text-on-surface-variant"><strong>Baja Solvencia:</strong> Acreditas 2.760 € (3 salarios mínimos) o presentas un Término de Responsabilidad firmado en Portugal.</p>
+                                </div>
+                                <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
+                                    <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">badge</span> Alemania (Ausbildung y Chancenkarte)</h5>
+                                    <p class="text-sm text-on-surface-variant mb-2"><strong>Ausbildung:</strong> Formación profesional dual pagada (recibes de 800 € a 1.200 € al mes). Exento de cuenta bloqueada si cubre tus gastos.</p>
+                                    <p class="text-sm text-on-surface-variant"><strong>Chancenkarte:</strong> Tarjeta de puntos para buscar trabajo si sabes algo de alemán o inglés.</p>
+                                </div>
+                                <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
+                                    <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">verified_user</span> Italia (Becas Universitarias DSU)</h5>
+                                    <p class="text-sm text-on-surface-variant mb-2"><strong>Estudio y Manutención:</strong> Exención de matrícula y hasta 7.500 € anuales. Los bajos ingresos en Cuba te facilitan conseguir la beca.</p>
+                                    <p class="text-sm text-on-surface-variant"><strong>Fondos de entrada:</strong> Requiere unos 6.000 € en cuenta internacional para el visado de entrada en La Habana.</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
-                        <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center"><span class="material-symbols-outlined mr-2 text-secondary">search</span> Buscadores de Becas y Validación</h5>
-                        <p class="text-sm text-on-surface-variant">El uso de **BecaLab** para catalogar y trackear becas internacionales y el **RUCT español** para certificar la validez de los títulos de FP son cruciales para el éxito del visado.</p>
+                        <!-- TAB: PORTUGAL -->
+                        <div id="tab-portugal" class="tab-content hidden space-y-6">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex-1 space-y-4">
+                                    <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">🇵🇹 Ruta Portugal: Visa de Búsqueda de Empleo</h4>
+                                    <p class="text-on-surface-variant font-body-lg">La vía más económica para entrar a la Unión Europea de forma legal, sin necesidad de un contrato previo firmado desde Cuba.</p>
+                                    
+                                    <div class="space-y-3">
+                                        <h5 class="text-primary font-label-md text-md font-bold">Cómo funciona paso a paso:</h5>
+                                        <ul class="text-sm text-on-surface-variant space-y-2 list-disc pl-4">
+                                            <li><strong>Inscripción en el IEFP:</strong> Te registras online en el Instituto de Empleo de Portugal para manifestar que buscas trabajo. Te da un comprobante obligatorio.</li>
+                                            <li><strong>Ahorros mínimos:</strong> Debes enseñar 2.760 € en una cuenta internacional. Si un residente legal o ciudadano en Portugal firma un "Término de Responsabilidad" notariado por ti, no tienes que enseñar ese dinero.</li>
+                                            <li><strong>Antecedentes Penales:</strong> Solicitas tus penales en Cuba, los legalizas en el MINJUS y en el Consulado portugués en La Habana. Tienen validez de 90 días.</li>
+                                            <li><strong>Acceso al Trabajo:</strong> Una vez en Portugal, buscas empleo. Sectores como turismo, hostelería, agricultura y servicios contratan de inmediato. Al firmar tu contrato, solicitas tu residencia temporal D3 directamente allá.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="p-4 rounded bg-secondary/10 border border-secondary/20">
+                                        <p class="text-xs text-on-secondary-container"><strong>💡 Caso de uso en Cuba:</strong> Si tienes un familiar en Portugal que te garantice alojamiento y comida firmando el Término de Responsabilidad, evitas tener que justificar los 2.760 € en una cuenta bancaria, reduciendo a cero el coste de solvencia económica inicial.</p>
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-[300px] flex-shrink-0">
+                                    <img src="lisbon_cafe_passport.png" alt="Pasaporte cubano en Lisboa" class="w-full rounded-lg shadow-xl border border-outline-variant/30 object-cover aspect-square"/>
+                                    <p class="text-[11px] text-on-surface-variant mt-2 text-center italic">Foto real de pasaporte cubano en Lisboa, Portugal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: TRAMITES CUBA -->
+                        <div id="tab-tramites" class="tab-content hidden space-y-6">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex-1 space-y-4">
+                                    <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">📄 Legalizaciones y Trámites en Cuba (MINJUS 2025/2026)</h4>
+                                    <p class="text-on-surface-variant font-body-lg">En Cuba no existe el Convenio de la Apostilla de La Haya. Las legalizaciones consulares son obligatorias.</p>
+                                    
+                                    <div class="space-y-3">
+                                        <h5 class="text-primary font-label-md text-md font-bold">Cambio del MINJUS (Efectivo desde abril de 2025):</h5>
+                                        <p class="text-sm text-on-surface-variant">El <strong>Ministerio de Justicia (MINJUS)</strong> asume el control directo de las legalizaciones para el exterior. El MINREX ya no es la primera puerta. Los documentos registrales y notariales se emiten con **firma digital y código QR** verificable (Resolución 284/2025).</p>
+                                        
+                                        <h5 class="text-primary font-label-md text-md font-bold">El Proceso de Legalización Paso a Paso:</h5>
+                                        <ol class="text-sm text-on-surface-variant space-y-2 list-decimal pl-4">
+                                            <li><strong>Escuela (IPU):</strong> Pides tu título de bachiller y certificación de notas firmados y acuñados.</li>
+                                            <li><strong>Educación (DPE):</strong> Legalizas las firmas en la Dirección Provincial de Educación de tu provincia.</li>
+                                            <li><strong>Bufete Colectivo / Consultoría:</strong> Contratas el servicio de legalización para el MINJUS (cuesta entre 2.500 y 5.000 CUP por documento). Ellos obtienen el sello electrónico digital.</li>
+                                            <li><strong>Consulado en La Habana:</strong> Solicitas cita de legalizaciones en la embajada del país al que vas. Pagas la tasa correspondiente (ej. 10 € en efectivo por documento para España).</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-[300px] flex-shrink-0">
+                                    <img src="cuban_legalization_documents.png" alt="Documentos del MINJUS con código QR" class="w-full rounded-lg shadow-xl border border-outline-variant/30 object-cover aspect-square"/>
+                                    <p class="text-[11px] text-on-surface-variant mt-2 text-center italic">Legalizaciones electrónicas cubanas emitidas por el MINJUS.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: PLAN 12 MESES -->
+                        <div id="tab-plan12" class="tab-content hidden space-y-6">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex-1 space-y-4">
+                                    <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">⚡ Tu Línea de Tiempo Dinámica</h4>
+                                    <p class="text-on-surface-variant font-body-lg">Organiza tus tareas en Cuba. Haz check en cada paso completado. Tu progreso se guarda de forma automática.</p>
+                                    
+                                    <!-- Progreso Local -->
+                                    <div class="glass-overlay p-4 rounded-lg border border-outline-variant/20 mb-6">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-xs font-bold text-on-secondary-container uppercase tracking-wider">Tu Progreso del Viaje</span>
+                                            <span id="timeline-progress-text" class="text-sm font-bold text-secondary">0%</span>
+                                        </div>
+                                        <div class="progress-line w-full rounded-full overflow-hidden">
+                                            <div id="timeline-progress-bar" class="progress-fill w-[0%] rounded-full h-1"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Timeline list -->
+                                    <div class="relative pl-6 border-l border-secondary/30 space-y-6">
+                                        <!-- Paso 1 -->
+                                        <div class="relative flex items-start">
+                                            <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                                <input type="checkbox" id="step-1" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                            </span>
+                                            <div class="ml-2">
+                                                <h5 class="font-label-md text-label-md text-primary font-bold">Paso 1: 💰 Viabilidad Económica y Solvencia</h5>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Asegura los ahorros mínimos (<strong>2.760 €</strong> para Portugal o <strong>7.200 €</strong> para España) o gestiona el Acta de Compromiso Económico notariada con tu patrocinador familiar en el extranjero.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Paso 2 -->
+                                        <div class="relative flex items-start">
+                                            <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                                <input type="checkbox" id="step-2" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                            </span>
+                                            <div class="ml-2">
+                                                <h5 class="font-label-md text-label-md text-primary font-bold">Paso 2: 🎓 Pre-registro IEFP o Admisión Académica</h5>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Inscríbete online en el portal del IEFP (Portugal) para buscar trabajo o consigue la carta de admisión oficial de una universidad o curso de FP superior en España.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Paso 3 -->
+                                        <div class="relative flex items-start border-2 border-secondary/20 p-3 rounded-lg bg-secondary/5">
+                                            <span class="absolute -left-[32px] top-4.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                                <input type="checkbox" id="step-3" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                            </span>
+                                            <div class="ml-2">
+                                                <h5 class="font-label-md text-label-md text-secondary font-bold flex items-center">
+                                                    <span class="material-symbols-outlined text-sm mr-1">warning</span> Paso 3: 🛂 Solicitud de Pasaporte Cubano
+                                                </h5>
+                                                <p class="text-xs text-on-surface-variant mt-0.5"><strong>[ESTRATEGIA PARA EVITAR PAGO INÚTIL]</strong> Solicita tu pasaporte en las oficinas de identificación cubanas <u>solo después</u> de que tengas asegurada la solvencia de fondos y la admisión o pre-registro. Si el plan inicial falla, no habrás gastado de más en este costoso trámite.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Paso 4 -->
+                                        <div class="relative flex items-start">
+                                            <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                                <input type="checkbox" id="step-4" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                            </span>
+                                            <div class="ml-2">
+                                                <h5 class="font-label-md text-label-md text-primary font-bold">Paso 4: 🏛️ Legalizaciones en Cuba (MINJUS/Consulado)</h5>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Legaliza tu título de bachiller, notas e historial académico a través de Bufetes Colectivos para obtener los sellos digitales del MINJUS y la validación del consulado respectivo.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Paso 5 -->
+                                        <div class="relative flex items-start">
+                                            <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                                <input type="checkbox" id="step-5" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                            </span>
+                                            <div class="ml-2">
+                                                <h5 class="font-label-md text-label-md text-primary font-bold">Paso 5: 📅 Obtención de Cita en La Habana</h5>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Saca tu turno en la embajada del país de destino. Envía los correos de solicitud con el asunto exacto requerido (ej. `CITA VISADO SLU` para España) y espera tus credenciales de acceso.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Paso 6 -->
+                                        <div class="relative flex items-start">
+                                            <span class="absolute -left-[32px] top-1.5 w-5 h-5 rounded-full bg-white border border-secondary flex items-center justify-center">
+                                                <input type="checkbox" id="step-6" class="step-checkbox w-3.5 h-3.5 accent-amber-500 rounded cursor-pointer" onclick="updateTimelineProgress()"/>
+                                            </span>
+                                            <div class="ml-2">
+                                                <h5 class="font-label-md text-label-md text-primary font-bold">Paso 6: ✈️ Pasajes de Reserva (Onward Ticket) y Seguro</h5>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Saca un seguro médico internacional válido por 30.000 € y contrata una reserva de vuelo temporal (Onward Ticket por $12 USD) para no arriesgar la compra de un billete final antes de tener la visa pegada en el pasaporte.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-[300px] flex-shrink-0">
+                                    <img src="cuban_youth_laptop_havana.png" alt="Estudiante cubano en La Habana" class="w-full rounded-lg shadow-xl border border-outline-variant/30 object-cover aspect-square"/>
+                                    <p class="text-[11px] text-on-surface-variant mt-2 text-center italic">Estudiante cubano preparando sus documentos en casa.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: EVASION -->
+                        <div id="tab-evasion" class="tab-content hidden space-y-6">
+                            <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">🛠️ Conectividad y Evasión de Bloqueos en Cuba</h4>
+                            <p class="text-on-surface-variant font-body-lg">Cómo saltar las trabas de ETECSA y el geo-blocking para estudiar y realizar trámites online.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
+                                    <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">vpn_lock</span> Uso de VPNs y Protocolos Stealth</h5>
+                                    <p class="text-sm text-on-surface-variant mb-2">ETECSA detecta y bloquea los túneles VPN comunes. Para usar ChatGPT, Claude o portales de becas europeos de forma estable, debes configurar:</p>
+                                    <ul class="text-xs text-on-surface-variant space-y-1 list-disc pl-6">
+                                        <li><strong>ProtonVPN (Stealth):</strong> Activa el protocolo *Stealth* en ajustes. Hace que el tráfico VPN parezca navegación web normal (HTTPS), evadiendo los bloqueos del firewall cubano.</li>
+                                        <li><strong>Windscribe (WStunnel/Stealth):</strong> Configura el protocolo a *WStunnel* para encapsular los datos dentro de websockets comunes.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
+                                    <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">credit_card</span> Pagos de Tasas y Aislamiento Geográfico (UNEDasiss)</h5>
+                                    <p class="text-sm text-on-surface-variant"><strong>Caso de Uso Crítico:</strong> La pasarela Redsys de la UNED bloquea automáticamente el pago si detecta una IP cubana (incluso usando VPNs sencillas) con una tarjeta extranjera.</p>
+                                    <p class="text-xs text-on-surface-variant mt-2"><strong>Solución real:</strong> Crea tu cuenta de UNEDasiss desde Cuba, añade tus datos, y deja el pago en borrador. Pídele a tu familiar en el extranjero que inicie sesión en tu cuenta con tus credenciales desde su país y realice el pago directo. Así coincide la IP de conexión de origen con el banco emisor de la tarjeta.</p>
+                                </div>
+
+                                <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
+                                    <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">flight_takeoff</span> Reservas Temporales (Onward Ticket)</h5>
+                                    <p class="text-sm text-on-surface-variant">Para cumplir con el pasaje de salida que te pide el consulado de Portugal o España, no compres un pasaje real de inmediato. Utiliza plataformas de **Onward Ticket** oficiales en internet que emiten una reserva verificable de aerolínea por 24-48 horas por solo $10 o $15 USD. Te sirve de prueba en el expediente sin riesgo de perder el pasaje si te retrasan la visa.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: CONSULADOS -->
+                        <div id="tab-consulados" class="tab-content hidden space-y-6">
+                            <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">🏛️ Enlaces Consulares Oficiales, Formularios y Tasas</h4>
+                            <p class="text-on-surface-variant font-body-lg">Accede a las páginas gubernamentales directas de cada embajada en La Habana, formularios de descarga obligatorios y coste exacto de tasas.</p>
+                            
+                            <div class="space-y-6">
+                                <!-- Portugal -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇵🇹 Portugal (Procura de Trabalho)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 90 €</span>
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Inscripción en el IEFP, pasaje de ida/vuelta (reserva), seguro médico de 30.000 € y 2.760 € en fondos o Carta de Responsabilidad.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="https://havana.embaixadaportugal.mne.gov.pt/es/" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Sitio Embajada</a>
+                                        <a href="https://pedidodevistos.mne.gov.pt/e-visto/" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Formulario E-Visa</a>
+                                        <a href="https://iefponline.iefp.pt/" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Registro IEFP</a>
+                                    </div>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📍 <em>Embajada: Av. 7ma, No. 2207, Miramar, Playa. Pagos en CUP al cambio consular.</em></p>
+                                </div>
+
+                                <!-- España -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇪🇸 España (Estudiante SLU)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 80 € (Solo Euros en efectivo)</span>
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Carta de admisión académica, Solvencia de 7.200 € anuales (IPREM), Antecedentes penales legalizados en el MINJUS y el Consulado, Certificado Médico.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="https://www.exteriores.gob.es/Consulados/lahabana" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Sitio Consulado</a>
+                                        <a href="https://www.exteriores.gob.es/Consulados/lahabana/es/ServiciosConsulares/Paginas/Visados.aspx" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Descargar Formulario EX-00</a>
+                                        <a href="https://sutramiteconsular.maec.es" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Consultar Expediente</a>
+                                    </div>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Registro de citas de estudios por correo: <strong>cog.lahabana.citavisados@maec.es</strong> (Asunto: CITA VISADO SLU).</em></p>
+                                </div>
+
+                                <!-- Alemania -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇩🇪 Alemania (Chancenkarte / Ausbildung)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 75 €</span>
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Título reconocido (Anabin) o 6 puntos del validador de Chancenkarte, cuenta bloqueada (*Sperrkonto* de 1.091 € al mes), seguro médico y formulario digital.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="https://la-habana.diplo.de" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Embajada Alemania</a>
+                                        <a href="https://videx-national.diplo.de" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Formulario VIDEX Online</a>
+                                        <a href="https://auslandsportal.diplo.de/" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Portal de Solicitudes</a>
+                                        <a href="https://www.make-it-in-germany.com" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Auto-Test Chancenkarte</a>
+                                        <a href="https://anabin.kmk.org" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Verificar Título (Anabin)</a>
+                                    </div>
+                                </div>
+
+                                <!-- Italia -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇮🇹 Italia (Estudios / Ciudadanía)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 50 € (Estudio) / 600 € (Ciudadanía)</span>
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Preinscripción en la plataforma Universitaly, legalizaciones para Declaración de Valor (gratuita para estudios) y demostrar fondos puente de ~6.000 €.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="https://amblavana.esteri.it/" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Embajada Italia</a>
+                                        <a href="https://prenotami.esteri.it/" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Sistema Prenot@mi (Citas)</a>
+                                        <a href="https://www.universitaly.it/" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Preinscripción Universitaly</a>
+                                    </div>
+                                </div>
+
+                                <!-- Grecia -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇬🇷 Grecia (Visado Schengen)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 90 €</span>
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Cita por correo electrónico, formulario Schengen rellenado, fotos 3x4 cm, seguro médico Schengen, reserva aérea e invitación o reserva de alojamiento.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="https://www.mfa.gr/missionsabroad/es/cuba.html" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Embajada de Grecia</a>
+                                    </div>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Citas y consultas por correo: <strong>gremb.hav@mfa.gr</strong>. Sede: 5ta Avenida & 78, Miramar.</em></p>
+                                </div>
+
+                                <!-- Irlanda -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇮🇪 Irlanda (Trámite Concurrente)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 60 € (Single) / 100 € (Multi)</span>
+                                    </div>
+                                    <p class="text-xs text-[#d32f2f] mb-3 font-semibold">⚠️ Nota: Irlanda NO cuenta con embajada física en La Habana. Los expedientes de cubanos se procesan a través de la Embajada de Irlanda en la Ciudad de México.</p>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Rellenar la solicitud digital en el sistema AVATS de Inmigración, enviar los pasaportes físicos originales y justificaciones de fondos a México por mensajería postal autorizada.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="https://www.irishimmigration.ie/" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Inmigración Irlanda (ISD)</a>
+                                        <a href="https://www.ireland.ie/en/mexico/" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Embajada en México</a>
+                                    </div>
+                                </div>
+
+                                <!-- Rumanía -->
+                                <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇷🇴 Rumanía (eViza)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 120 € (Larga Estancia)</span>
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Pre-carga de todos los PDFs en el portal eViza nacional, presentarse en La Habana con originales y copias de solvencia, reserva aérea de ida y vuelta, y seguro médico.</p>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="http://havana.mae.ro" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Embajada Rumanía</a>
+                                        <a href="https://eviza.mae.ro" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Portal eViza Online</a>
+                                    </div>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Citas por correo tras subir expediente: <strong>havana.cons@mae.ro</strong>. Dirección: Calle 5ta A, No. 4407, Miramar.</em></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-</div>
-<!-- Footer -->
-<footer class="w-full py-12 border-t border-outline-variant/30 mt-section-gap">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto space-y-6 md:space-y-0">
-<div class="text-secondary font-headline-md text-headline-md">ELITE MIGRACIÓN</div>
-<div class="flex flex-col items-center md:items-end">
-<div class="flex space-x-6 mb-4">
-<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
-</div>
-<div class="font-caption text-caption text-on-surface-variant">© 2024 ELITE MIGRACIÓN. All Rights Reserved.</div>
-</div>
-</div>
-</footer>
-</main>
-<script>
-        // Función interactiva para cambiar pestañas
+
+        <!-- Footer -->
+        <footer class="w-full py-12 border-t border-outline-variant/30 mt-section-gap">
+            <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto space-y-6 md:space-y-0">
+                <div class="text-secondary font-headline-md text-headline-md text-gold font-bold">ELITE MIGRACIÓN</div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors text-xs" href="#">Política de Privacidad</a>
+                        <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors text-xs" href="#">Términos de Servicio</a>
+                        <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors text-xs" href="#">Contacto</a>
+                    </div>
+                    <div class="font-caption text-caption text-on-surface-variant text-xs">© 2026 ELITE MIGRACIÓN. Todos los derechos reservados. Asesoría migratoria para ciudadanos cubanos.</div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Cambiar pestañas
         function switchTab(tabId) {
-            // Ocultar todos los contenidos de pestañas
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.add('hidden');
                 tab.classList.remove('block');
             });
-            // Mostrar la pestaña activa
             const activeTab = document.getElementById('tab-' + tabId);
             if (activeTab) {
                 activeTab.classList.remove('hidden');
                 activeTab.classList.add('block');
             }
             
-            // Quitar estilos activos de todos los botones
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
                 btn.classList.add('text-on-surface-variant', 'hover:bg-surface-variant/10');
             });
-            // Añadir estilos activos al botón seleccionado
             const activeBtn = document.getElementById('btn-' + tabId);
             if (activeBtn) {
                 activeBtn.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant/10');
@@ -510,7 +623,7 @@
             }
         }
 
-        // Función interactiva para la barra de progreso de la ruta de emigración
+        // Barra de progreso interactiva
         function updateTimelineProgress() {
             const checkboxes = document.querySelectorAll('.step-checkbox');
             const total = checkboxes.length;
@@ -520,13 +633,11 @@
                 if (cb.checked) {
                     checkedCount++;
                 }
-                // Guardar en local storage
                 localStorage.setItem(cb.id, cb.checked);
             });
             
             const percentage = Math.round((checkedCount / total) * 100);
             
-            // Actualizar elementos del DOM
             const progressBar = document.getElementById('timeline-progress-bar');
             const progressText = document.getElementById('timeline-progress-text');
             
@@ -536,7 +647,7 @@
             }
         }
 
-        // Restaurar estado de la ruta al cargar la página
+        // Cargar estado guardado
         document.addEventListener('DOMContentLoaded', () => {
             const checkboxes = document.querySelectorAll('.step-checkbox');
             checkboxes.forEach(cb => {
@@ -548,7 +659,7 @@
             updateTimelineProgress();
         });
 
-        // Simple intersection observer for subtle fade-in of cards
+        // Animación suave al cargar las tarjetas
         const observerOptions = {
             threshold: 0.1
         };
@@ -568,12 +679,6 @@
             card.style.transition = "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
             observer.observe(card);
         });
-
-        // Hover sound/haptic simulation
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                // Micro-interaction logic could go here
-            });
-        });
     </script>
-</body></html>
+</body>
+</html>
