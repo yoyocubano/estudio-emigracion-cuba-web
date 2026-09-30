@@ -249,7 +249,7 @@
                             🗺️ Mapa de Rutas
                         </button>
                         <button onclick="switchTab('portugal')" id="btn-portugal" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
-                            🇵🇹 Portugal (Búsqueda Empleo)
+                            🇵🇹 Portugal (Empleo Cualificado)
                         </button>
                         <button onclick="switchTab('tramites')" id="btn-tramites" class="tab-btn text-left px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-variant/10 cursor-pointer">
                             📄 Trámites y MINJUS Cuba
@@ -279,9 +279,9 @@
                                     <p class="text-sm text-on-surface-variant"><strong>Solvencia:</strong> 7.200 € al año (100% IPREM). Se admiten patrocinadores familiares directos en el exterior.</p>
                                 </div>
                                 <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
-                                    <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">work</span> Portugal (Búsqueda de Empleo)</h5>
-                                    <p class="text-sm text-on-surface-variant mb-2"><strong>Visa de 120 días:</strong> Viajas directo a buscar trabajo de forma legal. Si firmas contrato formal, obtienes residencia.</p>
-                                    <p class="text-sm text-on-surface-variant"><strong>Baja Solvencia:</strong> Acreditas 2.760 € (3 salarios mínimos) o presentas un Término de Responsabilidad firmado en Portugal.</p>
+                                    <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">work</span> Portugal (Búsqueda de Empleo Cualificado)</h5>
+                                    <p class="text-sm text-on-surface-variant mb-2"><strong>Visa de 120 días:</strong> Solo aplica con cualificación académica o técnica demostrable (título apostillado, CV Europass, carta de motivación). La modalidad general de búsqueda de empleo fue eliminada en octubre de 2025 (Ley 61/2025).</p>
+                                    <p class="text-sm text-on-surface-variant"><strong>Baja Solvencia:</strong> Acreditas 2.760 € (3 salarios mínimos) o presentas un Término de Responsabilidad firmado en Portugal. Tasa consular: 110 €.</p>
                                 </div>
                                 <div class="glass-overlay p-6 rounded-lg border border-outline-variant/10 hover:border-secondary/30 transition-colors">
                                     <h5 class="text-primary font-label-md text-lg mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">badge</span> Alemania (Ausbildung y Chancenkarte)</h5>
@@ -300,13 +300,17 @@
                         <div id="tab-portugal" class="tab-content hidden space-y-6">
                             <div class="flex flex-col md:flex-row gap-6">
                                 <div class="flex-1 space-y-4">
-                                    <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">🇵🇹 Ruta Portugal: Visa de Búsqueda de Empleo</h4>
-                                    <p class="text-on-surface-variant font-body-lg">La vía más económica para entrar a la Unión Europea de forma legal, sin necesidad de un contrato previo firmado desde Cuba.</p>
+                                    <h4 class="font-display-md text-display-md text-secondary font-bold text-gold">🇵🇹 Ruta Portugal: Visa de Búsqueda de Empleo Cualificado</h4>
+                                    <p class="text-on-surface-variant font-body-lg">Vía para entrar a la Unión Europea de forma legal, disponible únicamente si demuestras cualificación académica o técnica.</p>
+                                    <div class="p-3 rounded bg-red-500/10 border border-red-500/20">
+                                        <p class="text-xs text-red-700"><strong>⚠️ Aviso legal:</strong> La modalidad general de búsqueda de empleo fue eliminada el 23/10/2025 (Ley 61/2025, art. 57-A). Los consulados ya no aceptan solicitudes de esa vía genérica; sin cualificación demostrable, esta vía no aplica.</p>
+                                    </div>
                                     
                                     <div class="space-y-3">
                                         <h5 class="text-primary font-label-md text-md font-bold">Cómo funciona paso a paso:</h5>
                                         <ul class="text-sm text-on-surface-variant space-y-2 list-disc pl-4">
-                                            <li><strong>Inscripción en el IEFP:</strong> Te registras online en el Instituto de Empleo de Portugal para manifestar que buscas trabajo. Te da un comprobante obligatorio.</li>
+                                            <li><strong>Cualificación demostrable:</strong> Reúne título académico apostillado, certificación técnica, CV Europass y carta de motivación. Sin esto, el consulado rechaza la solicitud.</li>
+                                            <li><strong>Inscripción en el IEFP:</strong> Te registras online en el Instituto de Empleo de Portugal para manifestar que buscas trabajo cualificado. Te da un comprobante obligatorio.</li>
                                             <li><strong>Ahorros mínimos:</strong> Debes enseñar 2.760 € en una cuenta internacional. Si un residente legal o ciudadano en Portugal firma un "Término de Responsabilidad" notariado por ti, no tienes que enseñar ese dinero.</li>
                                             <li><strong>Antecedentes Penales:</strong> Solicitas tus penales en Cuba, los legalizas en el MINJUS y en el Consulado portugués en La Habana. Tienen validez de 90 días.</li>
                                             <li><strong>Acceso al Trabajo:</strong> Una vez en Portugal, buscas empleo. Sectores como turismo, hostelería, agricultura y servicios contratan de inmediato. Al firmar tu contrato, solicitas tu residencia temporal D3 directamente allá.</li>
@@ -388,7 +392,7 @@
                                             </span>
                                             <div class="ml-2">
                                                 <h5 class="font-label-md text-label-md text-primary font-bold">Paso 2: 🎓 Pre-registro IEFP o Admisión Académica</h5>
-                                                <p class="text-xs text-on-surface-variant mt-0.5">Inscríbete online en el portal del IEFP (Portugal) para buscar trabajo o consigue la carta de admisión oficial de una universidad o curso de FP superior en España.</p>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Si vas por Portugal, reúne tu cualificación demostrable (título o certificación técnica) e inscríbete online en el portal del IEFP; sin cualificación esta vía ya no aplica. Alternativa: consigue la carta de admisión oficial de una universidad o curso de FP superior en España.</p>
                                             </div>
                                         </div>
                                         <!-- Paso 3 -->
@@ -420,7 +424,7 @@
                                             </span>
                                             <div class="ml-2">
                                                 <h5 class="font-label-md text-label-md text-primary font-bold">Paso 5: 📅 Obtención de Cita en La Habana</h5>
-                                                <p class="text-xs text-on-surface-variant mt-0.5">Saca tu turno en la embajada del país de destino. Envía los correos de solicitud con el asunto exacto requerido (ej. `CITA VISADO SLU` para España) y espera tus credenciales de acceso.</p>
+                                                <p class="text-xs text-on-surface-variant mt-0.5">Saca tu turno en la embajada del país de destino. Para España, la cita ya no se pide por correo: se gestiona en el nuevo Centro de Solicitud de Visados (Av. 31 e/ 18 y 14, Miramar) desde octubre de 2026.</p>
                                             </div>
                                         </div>
                                         <!-- Paso 6 -->
@@ -461,11 +465,13 @@
                                     <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">credit_card</span> Pagos de Tasas y Aislamiento Geográfico (UNEDasiss)</h5>
                                     <p class="text-sm text-on-surface-variant"><strong>Caso de Uso Crítico:</strong> La pasarela Redsys de la UNED bloquea automáticamente el pago si detecta una IP cubana (incluso usando VPNs sencillas) con una tarjeta extranjera.</p>
                                     <p class="text-xs text-on-surface-variant mt-2"><strong>Solución real:</strong> Crea tu cuenta de UNEDasiss desde Cuba, añade tus datos, y deja el pago en borrador. Pídele a tu familiar en el extranjero que inicie sesión en tu cuenta con tus credenciales desde su país y realice el pago directo. Así coincide la IP de conexión de origen con el banco emisor de la tarjeta.</p>
+                                    <p class="text-xs text-red-700 font-semibold mt-2">⚠️ Compartir tus credenciales, aunque sea con un familiar, es un riesgo de seguridad de tu cuenta; usa esta vía solo si confías plenamente en esa persona.</p>
                                 </div>
 
                                 <div class="p-4 rounded-lg bg-surface-variant/20 border border-outline-variant/20">
                                     <h5 class="font-label-md text-label-md text-primary mb-2 flex items-center font-bold"><span class="material-symbols-outlined mr-2 text-secondary">flight_takeoff</span> Reservas Temporales (Onward Ticket)</h5>
                                     <p class="text-sm text-on-surface-variant">Para cumplir con el pasaje de salida que te pide el consulado de Portugal o España, no compres un pasaje real de inmediato. Utiliza plataformas de **Onward Ticket** oficiales en internet que emiten una reserva verificable de aerolínea por 24-48 horas por solo $10 o $15 USD. Te sirve de prueba en el expediente sin riesgo de perder el pasaje si te retrasan la visa.</p>
+                                    <p class="text-xs text-red-700 font-semibold mt-2">⚠️ Zona gris: si el consulado verifica la reserva y ya expiró, puede interpretarse como documentación no fiable. Genera la reserva lo más cerca posible de la fecha de tu cita.</p>
                                 </div>
                             </div>
                         </div>
@@ -479,10 +485,11 @@
                                 <!-- Portugal -->
                                 <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
                                     <div class="flex justify-between items-start mb-3">
-                                        <h5 class="font-bold text-lg text-primary flex items-center">🇵🇹 Portugal (Procura de Trabalho)</h5>
-                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 90 €</span>
+                                        <h5 class="font-bold text-lg text-primary flex items-center">🇵🇹 Portugal (Búsqueda de Empleo Cualificado)</h5>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 110 €</span>
                                     </div>
-                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Inscripción en el IEFP, pasaje de ida/vuelta (reserva), seguro médico de 30.000 € y 2.760 € en fondos o Carta de Responsabilidad.</p>
+                                    <p class="text-xs text-red-700 font-semibold mb-2">⚠️ La modalidad general fue eliminada en octubre de 2025 (Ley 61/2025); sin cualificación demostrable esta vía no aplica.</p>
+                                    <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Cualificación académica o técnica demostrable, inscripción en el IEFP, pasaje de ida/vuelta (reserva), seguro médico de 30.000 € y 2.760 € en fondos o Carta de Responsabilidad.</p>
                                     <div class="flex flex-wrap gap-3">
                                         <a href="https://havana.embaixadaportugal.mne.gov.pt/es/" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Sitio Embajada</a>
                                         <a href="https://pedidodevistos.mne.gov.pt/e-visto/" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Formulario E-Visa</a>
@@ -495,7 +502,7 @@
                                 <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
                                     <div class="flex justify-between items-start mb-3">
                                         <h5 class="font-bold text-lg text-primary flex items-center">🇪🇸 España (Estudiante SLU)</h5>
-                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 80 € (Solo Euros en efectivo)</span>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 80 € (efectivo) + 17 € gestión</span>
                                     </div>
                                     <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Carta de admisión académica, Solvencia de 7.200 € anuales (IPREM), Antecedentes penales legalizados en el MINJUS y el Consulado, Certificado Médico.</p>
                                     <div class="flex flex-wrap gap-3">
@@ -503,7 +510,7 @@
                                         <a href="https://www.exteriores.gob.es/Consulados/lahabana/es/ServiciosConsulares/Paginas/Visados.aspx" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Descargar Formulario EX-00</a>
                                         <a href="https://sutramiteconsular.maec.es" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded font-semibold transition-colors">Consultar Expediente</a>
                                     </div>
-                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Registro de citas de estudios por correo: <strong>cog.lahabana.citavisados@maec.es</strong> (Asunto: CITA VISADO SLU).</em></p>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📍 <em>Nuevo Centro de Solicitud de Visados: Av. 31 entre 18 y 14, Miramar, Playa. Visados Schengen desde el 05/10/2026, visados nacionales (estudios incluidos) desde el 12/10/2026, plataforma pública general desde el 01/12/2026. Contacto: <strong>info@spainvisa-cuba.com</strong>.</em></p>
                                 </div>
 
                                 <!-- Alemania -->
@@ -540,13 +547,14 @@
                                 <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
                                     <div class="flex justify-between items-start mb-3">
                                         <h5 class="font-bold text-lg text-primary flex items-center">🇬🇷 Grecia (Visado Schengen)</h5>
-                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 90 €</span>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-orange-500/10 text-orange-700 rounded">⏳ Pendiente de verificación</span>
                                     </div>
+                                    <p class="text-xs text-on-surface-variant mb-1">Tasa estimada: 90 €.</p>
                                     <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Cita por correo electrónico, formulario Schengen rellenado, fotos 3x4 cm, seguro médico Schengen, reserva aérea e invitación o reserva de alojamiento.</p>
                                     <div class="flex flex-wrap gap-3">
                                         <a href="https://www.mfa.gr/missionsabroad/es/cuba.html" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Embajada de Grecia</a>
                                     </div>
-                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Citas y consultas por correo: <strong>gremb.hav@mfa.gr</strong>. Sede: 5ta Avenida & 78, Miramar.</em></p>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Dirección de contacto sin verificación independiente: <strong>gremb.hav@mfa.gr</strong>. Sede: 5ta Avenida & 78, Miramar.</em></p>
                                 </div>
 
                                 <!-- Irlanda -->
@@ -567,14 +575,15 @@
                                 <div class="p-5 rounded-lg bg-surface border border-outline-variant/20 hover:border-gold transition-all duration-300">
                                     <div class="flex justify-between items-start mb-3">
                                         <h5 class="font-bold text-lg text-primary flex items-center">🇷🇴 Rumanía (eViza)</h5>
-                                        <span class="text-xs font-semibold px-2 py-1 bg-[#D4AF37]/10 text-[#B38F3D] rounded">Tasa: 120 € (Larga Estancia)</span>
+                                        <span class="text-xs font-semibold px-2 py-1 bg-orange-500/10 text-orange-700 rounded">⏳ Pendiente de verificación</span>
                                     </div>
+                                    <p class="text-xs text-on-surface-variant mb-1">Tasa estimada: 120 € (Larga Estancia).</p>
                                     <p class="text-xs text-on-surface-variant mb-4"><strong>Requisitos:</strong> Pre-carga de todos los PDFs en el portal eViza nacional, presentarse en La Habana con originales y copias de solvencia, reserva aérea de ida y vuelta, y seguro médico.</p>
                                     <div class="flex flex-wrap gap-3">
                                         <a href="http://havana.mae.ro" target="_blank" class="text-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded font-semibold hover:opacity-90">Embajada Rumanía</a>
                                         <a href="https://eviza.mae.ro" target="_blank" class="text-xs bg-[#D4AF37] text-black px-3 py-2 rounded font-semibold hover:opacity-90">Portal eViza Online</a>
                                     </div>
-                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Citas por correo tras subir expediente: <strong>havana.cons@mae.ro</strong>. Dirección: Calle 5ta A, No. 4407, Miramar.</em></p>
+                                    <p class="text-[10px] text-on-surface-variant mt-2">📧 <em>Dirección de contacto sin verificación independiente: <strong>havana.cons@mae.ro</strong>. Dirección: Calle 5ta A, No. 4407, Miramar.</em></p>
                                 </div>
                             </div>
                         </div>
