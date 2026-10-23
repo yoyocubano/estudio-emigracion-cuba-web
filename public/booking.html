@@ -76,6 +76,7 @@ fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},bod
 <p class="status" id="news-status" role="status"></p>
 </form></div>
 </div>
+<p class="small" style="margin-top:26px"><a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a> · <a href="cookies.html">Cookies</a> · <a href="#" data-elite-cookie-settings>Ajustes de cookies</a></p>
 <p class="small" style="margin-top:30px">© 2026 ELITE MIGRACIÓN. Todos los derechos reservados. Datos de rutas verificados contra fuentes oficiales a 30/09/2026; las tasas y requisitos pueden cambiar sin aviso.</p>
 </div></footer>
 <script>
@@ -86,6 +87,37 @@ if(!em||em.indexOf('@')<0){st.textContent='Escribe un correo válido.';return;}
 fetch('/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,company:f.querySelector('input[name=company]').value,src:src})})
 .then(function(r){return r.json();}).then(function(b){st.textContent=b&&b.ok?'Gracias: ya estás dentro del Boletín Élite.':'Algo salió mal. Inténtalo de nuevo.';if(b&&b.ok)f.reset();})
 .catch(function(){st.textContent='Algo salió mal. Inténtalo de nuevo.';});});})();
+</script>
+<style>
+#elite-cookie{display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;padding:1rem;justify-content:center}
+#elite-cookie.cw-show{display:flex}
+#elite-cookie .in{max-width:56rem;width:100%;background:rgba(11,42,74,.97);border:1px solid #B08D3C;border-radius:1rem;box-shadow:0 12px 32px -8px rgba(6,30,52,.45);padding:1.1rem 1.25rem;display:flex;flex-wrap:wrap;gap:.9rem 1.25rem;align-items:center;justify-content:space-between;color:#E2E8F0;font-size:14px;line-height:1.6}
+#elite-cookie a{color:#C9A44C;text-decoration:underline}
+#elite-cookie .acts{display:flex;gap:.6rem;flex-wrap:wrap}
+#elite-cookie button{font:inherit;font-weight:700;border-radius:999px;padding:.55rem 1.4rem;cursor:pointer;border:1px solid #B08D3C}
+#elite-cookie .ok{background:#B08D3C;color:#fff}
+#elite-cookie .no{background:transparent;color:#E2E8F0}
+</style>
+<div id="elite-cookie" role="dialog" aria-label="Aviso de cookies">
+<div class="in">
+<p style="margin:0;flex:1 1 330px"><strong style="color:#fff">Tu privacidad, clara.</strong> Este sitio no usa cookies de seguimiento. Solo guardamos tu elección sobre este aviso, en tu propio navegador. Más detalle en la <a href="cookies.html">política de cookies</a>.</p>
+<div class="acts">
+<button type="button" class="no" data-elite-reject>Rechazar</button>
+<button type="button" class="ok" data-elite-accept>Aceptar</button>
+</div>
+</div>
+</div>
+<script>
+(function(){var KEY='elite_cookie_consent';var b=document.getElementById('elite-cookie');
+function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+function show(){if(b)b.classList.add('cw-show');}
+function hide(){if(b)b.classList.remove('cw-show');}
+document.querySelectorAll('[data-elite-accept]').forEach(function(el){el.addEventListener('click',function(){set('accepted');hide();});});
+document.querySelectorAll('[data-elite-reject]').forEach(function(el){el.addEventListener('click',function(){set('rejected');hide();});});
+document.querySelectorAll('[data-elite-cookie-settings]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();show();});});
+window.eliteOpenCookieSettings=show;
+if(!get())show();})();
 </script>
 </body>
 </html>
