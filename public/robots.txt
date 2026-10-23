@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://elite-migracion.pages.dev/sitemap.xml
