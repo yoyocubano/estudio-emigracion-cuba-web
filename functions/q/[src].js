@@ -6,5 +6,5 @@ export async function onRequestGet(context) {
   if (env.DB) {
     waitUntil(env.DB.prepare("INSERT INTO qr_scans (src, country, ua) VALUES (?, ?, ?)").bind(src, (request.cf && request.cf.country) || null, (request.headers.get("user-agent") || "").slice(0, 200)).run().catch(() => {}));
   }
-  return Response.redirect(new URL("/?src=" + encodeURIComponent(src), request.url).toString(), 302);
+  return Response.redirect(new URL("/qr?src=" + encodeURIComponent(src), request.url).toString(), 302);
 }
